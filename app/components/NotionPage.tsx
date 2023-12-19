@@ -10,7 +10,9 @@ type Props = {};
 export default function NotionPage({ recordMap }: any) {
   return (
     <div>
-      <Link href={'/'}>Home</Link>
+      <div className="flex justify-center items-center pt-8">
+        <Link href={'/'}>Home</Link>
+      </div>
       <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={false} />
     </div>
   );
