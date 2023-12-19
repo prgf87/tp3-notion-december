@@ -12,7 +12,9 @@
     "next": "14.0.4",
     "notion-client": "^6.16.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-notion-x": "^6.16.0",
+    "canvas": "file:@/canvas"
   },
   "devDependencies": {
     "@types/node": "^20",
