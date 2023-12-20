@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Key } from 'react';
 
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { sqip } from 'sqip';
+// import { sqip } from 'sqip';
 
 // import logo from '@/public/logo.png';
 // import Header from './components/header';
@@ -25,10 +25,10 @@ export default async function Home() {
   const pages: any = await getDatabase();
   const categories = await getCategories();
 
-  const imagePreview = async (str: string) => {
-    const result = await sqip({ input: str });
-    console.log(result);
-  };
+  // const imagePreview = async (str: string) => {
+  //   const result = await sqip({ input: str });
+  //   console.log(result);
+  // };
 
   return (
     <main>
@@ -49,7 +49,7 @@ export default async function Home() {
                     <Image
                       alt="Image corresponding to the Link"
                       src={
-                        imagePreview(page.cover?.external.url) as unknown as
+                        page.cover?.external.url as unknown as
                           | string
                           | StaticImport
                       }
