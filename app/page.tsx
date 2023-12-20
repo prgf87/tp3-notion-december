@@ -1,4 +1,4 @@
-import { getDatabase } from '@/utils/db';
+import { getDatabase } from '@/utils';
 import Link from 'next/link';
 import { NotionAPI } from 'notion-client';
 import NotionPage from './components/NotionPage';

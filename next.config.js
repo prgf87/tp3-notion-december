@@ -2,18 +2,6 @@
 const nextConfig = {
   webpack: (config) => {
     config.resolve.alias.canvas = false;
-    config.module.rules.push({
-      test: /\.(png|jpe?g)$/,
-      loaders: [
-        '@docusaurus/lqip-loader',
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8000,
-          },
-        },
-      ],
-    });
 
     return config;
   },
