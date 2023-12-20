@@ -19,7 +19,8 @@ export default async function Home() {
 
   return (
     <main>
-      <h1 className="text-7xl">Hello world!!</h1>
+      <h1 className="text-7xl text-center pt-8">Talking Points for Life</h1>
+      <NotionPage recordMap={categories} />
       <div className="grid grid-cols-2 mx-auto">
         <div className="grid mx-auto">
           {pages.results.map((page) => {
@@ -30,7 +31,6 @@ export default async function Home() {
             );
           })}
         </div>
-        <NotionPage recordMap={categories} />
         {/* <div className="grid mx-auto">
           {categories.results.map((result) => {
             return (
