@@ -16,7 +16,6 @@ export default async function page({ params }: Props) {
 
   return (
     <div>
-      <Header />
       <NotionPage recordMap={recordMap} />
     </div>
   );
