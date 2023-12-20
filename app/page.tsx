@@ -21,6 +21,8 @@ export default async function Home() {
   // const homePage = await notion.getPage(databaseId);
   const categories = await getCategories();
 
+  console.log('###################', Object.keys(pages));
+
   return (
     <main>
       {/* <Header /> */}
