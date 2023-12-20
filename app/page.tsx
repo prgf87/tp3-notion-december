@@ -4,6 +4,7 @@ import { NotionAPI } from 'notion-client';
 import NotionPage from './components/NotionPage';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
+import Header from './components/header';
 
 const notion = new NotionAPI();
 const databaseId = process.env.NOTION_DB_ID as string;
@@ -22,32 +23,32 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="h-28 flex justify-center items-center pt-8 pb-4">
+      <Header />
+      {/* <div className="h-28 flex justify-center items-center pt-8 pb-4">
         <Link href={'/'}>
           <Image
             src={logo}
             alt="Website Logo"
             width={125}
             height={125}
-            className="h-[125px] max-w-[125px] hover:scale-75 transition-transform duration-100 ease-out hover:rounded-full hover:border-3 hover:border-black/90 hover:m-auto"
+            className="h-[125px] max-w-[125px] transition-all duration-500 ease-linear hover:rounded-3xl hover:border hover:border-black/70"
           />
         </Link>
-      </div>
-      <h1 className="text-7xl text-center pt-8 pb-4">
+      </div> */}
+      {/* <h1 className="text-7xl font-extrabold shadow-2xl text-center pt-8 pb-4">
         Talking Points for Life
-      </h1>
+      </h1> */}
       <NotionPage recordMap={categories} />
       {/* <NotionPage recordMap={homePage} /> */}
-      <div className="grid grid-cols-2 mx-auto">
-        <div className="grid mx-auto">
-          {pages.results.map((page) => {
-            return (
-              <p key={page.id}>
-                <Link href={`/${page.id}`}>{page.id}</Link>
-              </p>
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-8 mx-auto">
+        {pages.results.map((page) => {
+          return (
+            <p key={page.id}>
+              <Link href={`/${page.id}`}>{page.object}</Link>
+            </p>
+          );
+        })}
+
         {/* <div className="grid mx-auto">
           {categories.results.map((result) => {
             return (
