@@ -23,7 +23,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Header />
+      {/* <Header /> */}
       {/* <div className="h-28 flex justify-center items-center pt-8 pb-4">
         <Link href={'/'}>
           <Image
