@@ -19,7 +19,7 @@ export default function Header({}: Props) {
           />
         </Link>
       </div>
-      <h1 className="text-7xl font-extrabold shadow-2xl text-center pt-8 pb-4">
+      <h1 className="text-7xl font-extrabold  text-center pt-8 pb-4 uppercase drop-shadow-[-6px_4px_2px_rgba(0,0,0,0.55)]">
         Talking Points for Life
       </h1>
     </>
