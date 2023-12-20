@@ -38,9 +38,6 @@ export default function NotionPage({ recordMap }: Props) {
   console.log(Object.keys(recordMap));
   return (
     <div>
-      <div className="flex justify-center items-center pt-8">
-        <Link href={'/'}>Home</Link>
-      </div>
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
