@@ -34,7 +34,7 @@ export default async function Home() {
   return (
     <main>
       {/* <NotionPage recordMap={categories} /> */}
-      <div className="max-w-3xl mx-auto">
+      <div>
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
           {pages.results.map(
             (page: {

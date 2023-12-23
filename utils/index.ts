@@ -3,7 +3,7 @@ import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_ID as string;
-const pageSize: number = 12;
+const pageSize: number = 6;
 
 export async function fetchData() {
   //* GET query made looking for the first complete pages/posts */
