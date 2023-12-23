@@ -12,7 +12,6 @@ export default function Header({}: Props) {
         <div className="flex justify-center items-center space-x-8">
           <Link href={'/about'}>About</Link>
           <Link href={'/coffee'}>Buy me a Coffee</Link>
-          {/* <Link href={'/buy-coffee'}>Buy me a Coffee</Link> */}
         </div>
         <div className="flex justify-center items-center">
           <Link href={'/'}>
@@ -27,8 +26,6 @@ export default function Header({}: Props) {
         </div>
         <div className="flex justify-center items-center">
           <Link href={'/login'}>User Area</Link>
-
-          {/* <Link href={'/user'}>User Area</Link> */}
         </div>
       </div>
       <h1 className="text-7xl font-extrabold  text-center pt-8 pb-4 uppercase drop-shadow-[-6px_4px_2px_rgba(0,0,0,0.55)]">
