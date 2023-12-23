@@ -62,7 +62,7 @@
   --notion-item-purple: rgba(103, 36, 222, 0.2);
   --notion-item-gray: rgba(155, 154, 151, 0.4);
 
-  --notion-max-width: 720px;
+  --notion-max-width: 1920px;
   --notion-header-height: 45px;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .notion {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--fg-color);
   caret-color: var(--fg-color);
@@ -1463,11 +1463,11 @@ svg.notion-page-icon {
 }
 
 .notion-gallery-grid-size-small {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
 .notion-gallery-grid-size-large {
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(640px, 1fr));
 }
 
 .notion-collection-card {

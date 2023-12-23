@@ -16,10 +16,10 @@ html {
 }
 
 .gradient {
-  /* --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif;
-  font-family: var(--notion-font); */
+  font-family: var(--notion-font);
   overflow-x: hidden;
   background: linear-gradient(
     -45deg,
@@ -71,11 +71,11 @@ html {
 }
 
 .loader {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #afafaf; /* Blue */
+  border: 2px solid #afafaf; /* Light grey */
+  border-top: 2px solid #f3f3f3;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   animation: spin 1s linear infinite;
 }
 

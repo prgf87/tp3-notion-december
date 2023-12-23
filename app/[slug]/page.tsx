@@ -1,4 +1,4 @@
-import NotionPage from '@/app/components/NotionPage';
+import NotionPage from '@/app/components/notion/NotionPage';
 import { NotionAPI } from 'notion-client';
 import React from 'react';
 

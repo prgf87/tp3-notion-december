@@ -1,4 +1,4 @@
-import Loader from './components/Loader';
+import Loader from './components/notion/Loader';
 import Categories from './components/categories';
 import Intro from './components/intro';
 
