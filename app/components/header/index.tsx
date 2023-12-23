@@ -8,29 +8,28 @@ type Props = {};
 export default function Header({}: Props) {
   return (
     <>
-      <div className="h-28 grid grid-cols-3 pt-8 pb-4 mx-auto">
-        <div className="flex justify-center items-center space-x-8">
-          <Link href={'/about'}>About</Link>
-          <Link href={'/coffee'}>Buy me a Coffee</Link>
-        </div>
-        <div className="flex justify-center items-center">
-          <Link href={'/'}>
+      <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-pink-500/90 text-white text-base drop-shadow-lg z-[1000]">
+        <div className="flex justify-center items-center py-8">
+          <Link href={'/'} className="absolute">
             <Image
               src={logo}
               alt="Website Logo"
-              width={125}
-              height={125}
-              className="h-[125px] max-w-[125px] transition-all duration-500 ease-linear hover:rounded-3xl hover:border hover:border-black/70"
+              width={150}
+              height={150}
+              className="h-[70px] max-w-[70px] transition-all duration-300 ease-linear hover:rounded-2xl hover:border-2 hover:border-black/70"
             />
+          </Link>
+        </div>
+        <div className="flex justify-center items-center space-x-8">
+          <Link href={'/about'}>About Us</Link>
+          <Link href={'https://www.buymeacoffee.com/tp4life'} target="_blank">
+            Buy me a Coffee
           </Link>
         </div>
         <div className="flex justify-center items-center">
           <Link href={'/login'}>User Area</Link>
         </div>
       </div>
-      <h1 className="text-7xl font-extrabold  text-center pt-8 pb-4 uppercase drop-shadow-[-6px_4px_2px_rgba(0,0,0,0.55)]">
-        Talking Points for Life
-      </h1>
     </>
   );
 }

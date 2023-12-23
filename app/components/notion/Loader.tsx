@@ -1,5 +1,5 @@
 'use client';
-import { fetchData, fetchMoreData } from '@/utils';
+import { fetchPages, fetchMorePages } from '@/utils';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ export default function Loader({}: Props) {
   useEffect(() => {
     setLoading(true);
     try {
-      fetchData().then((res) => {
+      fetchPages().then((res) => {
         setData(res.results);
         setCursor(res.next_cursor);
         setLoading(false);
@@ -32,7 +32,7 @@ export default function Loader({}: Props) {
     setLoading(true);
     if (inView && typeof cursor === 'string') {
       try {
-        fetchMoreData(cursor).then((res: any) => {
+        fetchMorePages(cursor).then((res: any) => {
           console.log(res);
           if (res.has_more) {
             setCursor(res.next_cursor);
@@ -49,8 +49,8 @@ export default function Loader({}: Props) {
   }, [inView, data, cursor]);
 
   return (
-    <div>
-      <div className="max-w-3xl mx-auto">
+    <div className="py-8">
+      <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 mx-auto">
           {data.map(
             (page: {
