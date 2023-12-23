@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Key } from 'react';
 
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Loader from './components/Loader';
 // import { sqip } from 'sqip';
 
 // import logo from '@/public/logo.png';
@@ -34,7 +35,7 @@ export default async function Home() {
     <main>
       <NotionPage recordMap={categories} />
       <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-3 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
           {pages.results
             .slice(0, 18)
             .map(
@@ -62,6 +63,7 @@ export default async function Home() {
               }
             )}
         </div>
+        <Loader />
       </div>
     </main>
   );

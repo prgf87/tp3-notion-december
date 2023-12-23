@@ -37,7 +37,7 @@ const Modal = dynamic(
 type Props = { recordMap: ExtendedRecordMap };
 
 export default function NotionPage({ recordMap }: Props) {
-  console.log(Object.keys(recordMap));
+  // console.log(Object.keys(recordMap));
   return (
     <div>
       <NotionRenderer
