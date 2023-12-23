@@ -8,12 +8,13 @@ type Props = {};
 export default function Header({}: Props) {
   return (
     <>
-      <div className="h-28 w-full grid grid-cols-3 pt-8 pb-4 mx-a">
-        <div>
+      <div className="h-28 grid grid-cols-3 pt-8 pb-4 mx-auto">
+        <div className="flex justify-center items-center space-x-8">
           <Link href={'/about'}>About</Link>
+          <Link href={'/coffee'}>Buy me a Coffee</Link>
           {/* <Link href={'/buy-coffee'}>Buy me a Coffee</Link> */}
         </div>
-        <div>
+        <div className="flex justify-center items-center">
           <Link href={'/'}>
             <Image
               src={logo}
@@ -24,8 +25,8 @@ export default function Header({}: Props) {
             />
           </Link>
         </div>
-        <div>
-          <Link href={'/about'}>About</Link>
+        <div className="flex justify-center items-center">
+          <Link href={'/login'}>User Area</Link>
 
           {/* <Link href={'/user'}>User Area</Link> */}
         </div>
