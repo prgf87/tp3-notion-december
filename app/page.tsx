@@ -7,7 +7,7 @@ export default async function Home() {
     <main className="gradient">
       {/* <Intro /> */}
       <Categories />
-      {/* <Loader /> */}
+      <Loader />
     </main>
   );
 }

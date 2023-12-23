@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="top-0">
           <Header />
         </div>
-        <div className="min-h-screen min-w-screen max-w-screen mx-auto">
+        <div className="min-h-fit min-w-screen max-w-screen mx-auto">
           {children}
         </div>
         <div className="bottom-0">
