@@ -51,7 +51,7 @@ export default function Loader({}: Props) {
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 mx-auto">
           {data.map(
             (page: {
               id: Key | null | undefined;
