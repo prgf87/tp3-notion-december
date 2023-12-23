@@ -19,10 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className}`}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={`${roboto.className} min-h-screen`}>
+        <div className="sticky top-0">
+          <Header />
+        </div>
+        <div className="min-h-screen">{children}</div>
+        <div className="sticky bottom-0">
+          <Footer />
+        </div>
       </body>
     </html>
   );
