@@ -54,7 +54,7 @@ export default function NotionPage({ recordMap }: Props) {
           nextLink: Link,
         }}
         previewImages={true}
-        className="z-0 mx-auto"
+
         // mapPageUrl={recordMap.block}
       />
     </div>

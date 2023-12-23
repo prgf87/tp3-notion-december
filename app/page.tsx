@@ -5,9 +5,9 @@ import Intro from './components/intro';
 export default async function Home() {
   return (
     <main className="gradient">
-      <Intro />
+      {/* <Intro /> */}
       <Categories />
-      <Loader />
+      {/* <Loader /> */}
     </main>
   );
 }
