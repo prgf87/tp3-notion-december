@@ -20,7 +20,7 @@ export default function Loader({}: Props) {
 
   useEffect(() => {
     if (data.length > 0 && inView) {
-      alert('Load More');
+      console.log('Load More');
       console.log(cursor);
       //   getMoreDatabase()
       //   //   getDatabase();
@@ -31,10 +31,10 @@ export default function Loader({}: Props) {
     //   setData(res.results);
     // });
     // if (inView) {
-  }, [inView, data, cursor]);
+  }, [inView, data]);
 
   return (
-    <div ref={ref}>
+    <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
         {data.map(
           (page: {
@@ -59,7 +59,7 @@ export default function Loader({}: Props) {
           }
         )}
       </div>
-      <div className="flex justify-center items-center">
+      <div ref={ref} className="flex justify-center items-center">
         <div className="loader" />
       </div>
     </div>
