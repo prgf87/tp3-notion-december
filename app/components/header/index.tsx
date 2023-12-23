@@ -8,7 +8,7 @@ type Props = {};
 export default function Header({}: Props) {
   return (
     <>
-      <div className="h-20 grid grid-cols-3 pt-8 pb-8 mx-auto bg-white/70">
+      <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-pink-500/90 text-white text-xl drop-shadow-lg">
         <div className="flex justify-center items-center">
           <Link href={'/'}>
             <Image
@@ -16,7 +16,7 @@ export default function Header({}: Props) {
               alt="Website Logo"
               width={125}
               height={125}
-              className="h-[80px] max-w-[80px] transition-all duration-500 ease-linear hover:rounded-2xl hover:border hover:border-black/70"
+              className="h-[70px] max-w-[70px] transition-all duration-500 ease-linear hover:rounded-2xl hover:border hover:border-black/70"
             />
           </Link>
         </div>
