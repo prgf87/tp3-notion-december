@@ -4,8 +4,8 @@ import React from 'react';
 import { NotionRenderer } from 'react-notion-x';
 import dynamic from 'next/dynamic';
 
-import '@/app/styles/notion-styles.css';
-// import 'react-notion-x/src/styles.css';
+// import '@/app/styles/notion-styles.css';
+import 'react-notion-x/src/styles.css';
 
 import { ExtendedRecordMap } from 'notion-types';
 import Image from 'next/image';
@@ -39,7 +39,7 @@ type Props = { recordMap: ExtendedRecordMap };
 export default function NotionPage({ recordMap }: Props) {
   // console.log(Object.keys(recordMap));
   return (
-    <div className="max-w-3xl mx-auto">
+    <div>
       <NotionRenderer
         recordMap={recordMap}
         fullPage={true}
@@ -54,6 +54,7 @@ export default function NotionPage({ recordMap }: Props) {
           nextLink: Link,
         }}
         previewImages={true}
+        className="z-0 mx-auto"
         // mapPageUrl={recordMap.block}
       />
     </div>

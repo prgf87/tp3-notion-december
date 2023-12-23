@@ -50,7 +50,7 @@ export default function Loader({}: Props) {
 
   return (
     <div className="py-8">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 mx-auto">
           {data.map(
             (page: {
