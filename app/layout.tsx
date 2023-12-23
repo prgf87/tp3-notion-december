@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} gradient`}>
+      <body className={`${roboto.className}`}>
         <Header />
         {children}
         <Footer />
