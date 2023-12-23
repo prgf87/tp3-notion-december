@@ -12,17 +12,34 @@ export default function Loader({}: Props) {
   const [data, setData] = useState<any>([]);
   const [cursor, setCursor] = useState<string | null | undefined>(undefined);
   const { ref, inView } = useInView();
-  const response: any = getDatabase().then((res) => {
-    console.log(res);
-    setData(res.results);
-    setCursor(res.next_cursor);
-  });
 
   useEffect(() => {
-    if (data.length > 0 && inView) {
+    try {
+      getDatabase().then((res) => {
+        // console.log(res);
+        setData(res.results);
+        setCursor(res.next_cursor);
+      });
+    } catch (e) {
+      console.log('****ERROR: ', e);
+    }
+
+    // return () => {
+    //   second;
+    // };
+  }, []);
+
+  useEffect(() => {
+    if (inView && typeof cursor === 'string') {
       console.log('Load More');
-      console.log(cursor);
-      //   getMoreDatabase()
+      // console.log(cursor);
+      getMoreDatabase(cursor).then((res: any) => {
+        console.log(res);
+        if (res.has_more) {
+          setCursor(res.next_cursor);
+          setData([...data, ...res.results]);
+        }
+      });
       //   //   getDatabase();
       // }
     }
@@ -31,7 +48,7 @@ export default function Loader({}: Props) {
     //   setData(res.results);
     // });
     // if (inView) {
-  }, [inView, data]);
+  }, [inView, data, cursor]);
 
   return (
     <div>
