@@ -1,5 +1,5 @@
 'use client';
-import { getDatabase, getMoreDatabase } from '@/utils';
+import { fetchData, fetchMoreData } from '@/utils';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,39 +15,25 @@ export default function Loader({}: Props) {
 
   useEffect(() => {
     try {
-      getDatabase().then((res) => {
-        // console.log(res);
+      fetchData().then((res) => {
         setData(res.results);
         setCursor(res.next_cursor);
       });
     } catch (e) {
       console.log('****ERROR: ', e);
     }
-
-    // return () => {
-    //   second;
-    // };
   }, []);
 
   useEffect(() => {
     if (inView && typeof cursor === 'string') {
-      console.log('Load More');
-      // console.log(cursor);
-      getMoreDatabase(cursor).then((res: any) => {
+      fetchMoreData(cursor).then((res: any) => {
         console.log(res);
         if (res.has_more) {
           setCursor(res.next_cursor);
           setData([...data, ...res.results]);
         }
       });
-      //   //   getDatabase();
-      // }
     }
-    // getDatabase().then((res) => {
-    //   console.log(res);
-    //   setData(res.results);
-    // });
-    // if (inView) {
   }, [inView, data, cursor]);
 
   return (
