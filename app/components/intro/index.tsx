@@ -5,11 +5,7 @@ type Props = {};
 export default function Intro({}: Props) {
   return (
     <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
-      <h1
-        className="text-7xl font-light  text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]
-      
-      "
-      >
+      <h1 className="text-7xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
         Welcome to Talking Points for Life
       </h1>
       <div className="mx-8 2xl:mx-20 py-8 space-y-4">

@@ -261,9 +261,9 @@
   bottom: 0;
 }
 
-.medium-zoom-overlay {
+/* .medium-zoom-overlay {
   z-index: 300;
-}
+} */
 
 .medium-zoom-image {
   border-radius: 0;

@@ -30,7 +30,7 @@ export default function Search({}: Props) {
       </form>
       <div className="relative">
         <div className="absolute border w-full">
-          <ul className="bg-gray-900 z-50">
+          <ul className="bg-gray-900/70">
             {query.length > 0 &&
               results.map((res: any) => {
                 console.log(res);

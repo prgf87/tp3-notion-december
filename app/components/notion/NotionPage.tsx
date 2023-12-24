@@ -4,8 +4,8 @@ import React from 'react';
 import { NotionRenderer } from 'react-notion-x';
 import dynamic from 'next/dynamic';
 
-// import '@/app/styles/notion-styles.css';
-import 'react-notion-x/src/styles.css';
+import '@/app/styles/notion-styles.css';
+// import 'react-notion-x/src/styles.css';
 
 import { ExtendedRecordMap } from 'notion-types';
 import Image from 'next/image';
@@ -54,7 +54,7 @@ export default function NotionPage({ recordMap }: Props) {
           nextLink: Link,
         }}
         previewImages={true}
-        className="z-[-1]"
+        // className="z-[-2]"
 
         // mapPageUrl={recordMap.block}
       />
