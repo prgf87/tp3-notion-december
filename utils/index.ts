@@ -60,14 +60,14 @@ export async function searchNotion(query: string = 'Love') {
   const response = await notion.search({
     query: query,
     filter: {
-      value: 'page',
+      value: 'database',
       property: 'object',
     },
     sort: {
-      direction: 'ascending',
+      direction: 'descending',
       timestamp: 'last_edited_time',
     },
-    page_size: 5,
+    page_size: 25,
   });
   // console.log('########Search: ', response);
   return response;

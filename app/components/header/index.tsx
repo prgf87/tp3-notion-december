@@ -26,15 +26,15 @@ export default async function Header({}: Props) {
           </Link>
         </div>
         <div className="flex justify-center items-center space-x-8">
-          <Link href={'/about'}>About Us</Link>
-          <Link href={'https://www.buymeacoffee.com/tp4life'} target="_blank">
-            Buy me a Coffee
-          </Link>
+          <Search />
         </div>
         <div className="flex justify-center items-center space-x-8">
+          <Link href={'https://www.buymeacoffee.com/tp4life'} target="_blank">
+            Donate
+          </Link>
+          <Link href={'/about'}>About Us</Link>
+
           <Link href={'/login'}>User Area</Link>
-          {/* <Search block={} search={search} /> */}
-          <Search />
         </div>
       </div>
     </>
