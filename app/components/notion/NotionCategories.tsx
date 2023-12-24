@@ -55,6 +55,7 @@ export default function NotionCategories({ recordMap }: Props) {
         }}
         previewImages={true}
         disableHeader={true}
+        className="z-[0]"
 
         // mapPageUrl={recordMap.block}
       />

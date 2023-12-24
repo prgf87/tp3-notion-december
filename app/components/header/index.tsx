@@ -13,7 +13,7 @@ export default async function Header({}: Props) {
   // const block = await search();
   return (
     <>
-      <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-pink-500/90 text-white text-base drop-shadow-lg z-[1000]">
+      <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-pink-500/90 text-white text-base drop-shadow-lg">
         <div className="flex justify-center items-center py-8">
           <Link href={'/'} className="absolute">
             <Image

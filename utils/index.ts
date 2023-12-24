@@ -56,7 +56,7 @@ export async function fetchCategories() {
   return response;
 }
 
-export async function search(query: string = 'Love') {
+export async function searchNotion(query: string = 'Love') {
   const response = await notion.search({
     query: query,
     filter: {
