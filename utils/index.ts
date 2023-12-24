@@ -67,7 +67,8 @@ export async function search(query: string = 'Love') {
       direction: 'ascending',
       timestamp: 'last_edited_time',
     },
-    page_size: 1,
+    page_size: 5,
   });
-  console.log('########Search: ', response);
+  // console.log('########Search: ', response);
+  return response;
 }

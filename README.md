@@ -1,4 +1,4 @@
-This is a custom created integration with Notion API using react-notion-x by Travis Fischer as the renderer. This custom integration uses server actions and intersect-observer to create an endless scrolling pagination.
+This is a custom created integration with Notion API using NextJS 14 and react-notion-x by Travis Fischer as the renderer. This custom integration uses server actions and intersect-observer to create "endlessly" scrolling pagination.
 
 Still under construction, please come back later for more updates.
 

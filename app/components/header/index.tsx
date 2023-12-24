@@ -31,7 +31,7 @@ export default async function Header({}: Props) {
             Buy me a Coffee
           </Link>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center space-x-8">
           <Link href={'/login'}>User Area</Link>
           {/* <Search block={} search={search} /> */}
           <Search />
