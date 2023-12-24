@@ -37,7 +37,6 @@ const Modal = dynamic(
 type Props = { recordMap: ExtendedRecordMap };
 
 export default function NotionPage({ recordMap }: Props) {
-  // console.log(Object.keys(recordMap));
   return (
     <div>
       <NotionRenderer
@@ -54,9 +53,6 @@ export default function NotionPage({ recordMap }: Props) {
           nextLink: Link,
         }}
         previewImages={true}
-        // className="z-[-2]"
-
-        // mapPageUrl={recordMap.block}
       />
     </div>
   );
