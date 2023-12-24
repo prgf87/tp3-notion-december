@@ -16,7 +16,7 @@ export default function Loader({}: Props) {
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     try {
       fetchPages().then((res) => {
         setData(res.results);
