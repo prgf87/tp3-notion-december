@@ -12,7 +12,7 @@ export default function Intro({}: Props) {
       >
         Welcome to Talking Points for Life
       </h1>
-      <div className="mx-8 2xl:mx-40 py-8 space-y-4">
+      <div className="mx-8 2xl:mx-20 py-8 space-y-4">
         <p className="text-lg">
           Too many people are left wandering through Reddit threads and Quora
           posts, looking for advice on what to say. Communication is tricky. We
