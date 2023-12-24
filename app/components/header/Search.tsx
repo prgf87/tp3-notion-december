@@ -33,7 +33,7 @@ export default function Search({}: Props) {
           <ul className="bg-gray-900/70">
             {query.length > 0 &&
               results.map((res: any) => {
-                console.log(res);
+                // console.log(res);
 
                 return (
                   <Link
