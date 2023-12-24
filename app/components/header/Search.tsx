@@ -14,7 +14,7 @@ export default function Search({}: Props) {
           e.preventDefault();
           search(query).then((res) => {
             console.log(Object.keys(res));
-            setResults(res.results);
+            setResults(res.results as any);
           });
         }}
       >
@@ -30,7 +30,7 @@ export default function Search({}: Props) {
       <div className="relative">
         <div className="absolute border w-full">
           <ul>
-            {results.map((res) => {
+            {results.map((res: any) => {
               console.log(res);
 
               return <li className="py-1" key={res.id}></li>;
