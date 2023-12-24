@@ -14,10 +14,17 @@ export default function Search({}: Props) {
       <form
         onInput={(e) => {
           e.preventDefault();
-          searchNotion(query).then((res) => {
-            console.log(Object.keys(res));
-            setResults(res.results as any);
-          });
+          searchNotion(query)
+            .then((res) => {
+              const { results } = res;
+              console.log(results);
+              return results.map((res) => {
+                if (res.object === 'database') return res;
+              });
+            })
+            .then((res) => {
+              setResults(res as any);
+            });
         }}
       >
         <input
