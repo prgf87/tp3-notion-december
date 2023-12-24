@@ -12,7 +12,7 @@ const getCategories = async () => {
 
 export default async function Categories({}: Props) {
   const categories = await getCategories();
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div className="max-w-3xl 2xl:max-w-7xl mx-auto">

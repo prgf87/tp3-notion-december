@@ -33,7 +33,7 @@ export default function Loader({}: Props) {
     if (inView && typeof cursor === 'string') {
       try {
         fetchMorePages(cursor).then((res: any) => {
-          console.log(res);
+          // console.log(res);
           if (res.has_more) {
             setCursor(res.next_cursor);
             setData([...data, ...res.results]);

@@ -55,3 +55,19 @@ export async function fetchCategories() {
 
   return response;
 }
+
+export async function search(query: string = 'Love') {
+  const response = await notion.search({
+    query: query,
+    filter: {
+      value: 'page',
+      property: 'object',
+    },
+    sort: {
+      direction: 'ascending',
+      timestamp: 'last_edited_time',
+    },
+    page_size: 1,
+  });
+  console.log('########Search: ', response);
+}
