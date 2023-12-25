@@ -28,6 +28,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.sympathymessageideas.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.icons8.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'giphy.com',
+      },
     ],
   },
 };

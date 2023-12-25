@@ -3,6 +3,7 @@ import { searchNotion } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import logo from '@/public/logo.png';
 
 type Props = {};
 
@@ -37,30 +38,40 @@ export default function Search({}: Props) {
         />
       </form>
       <div className="relative">
-        <div className="absolute min-w-[500px] max-h-[200px]">
-          <ul className="bg-gray-700/95">
+        <div className="absolute min-w-[550px] max-h-[200px]">
+          <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95">
             {query.length > 0 &&
               results.map((res: any) => {
                 console.log(res);
 
-                if (res?.title[0].text.content) {
+                if (res?.title[0].text.content && res?.parent.page_id) {
                   return (
                     <li
                       className="p-0.5 flex hover:bg-gray-900/90 border-t-2"
                       key={res.id}
                     >
                       <Link
-                        href={`/${
-                          res?.parent.database_id
-                            ? res?.parent.database_id
-                            : res?.id
-                        }`}
+                        href={`/${res?.parent.page_id as string}`}
                         onClick={() => {
                           setQuery('');
                         }}
                       >
-                        {/* <Image src={res?} alt='Search Icon' /> */}
-                        <p className="">
+                        <p className="flex">
+                          <Image
+                            src={
+                              res?.icon?.external?.url
+                                ? res?.icon?.external?.url
+                                : res?.cover?.external.url
+                                  ? res?.cover?.external.url
+                                  : res?.icon?.emoji
+                                    ? res?.icon?.emoji
+                                    : logo
+                            }
+                            alt={'Page Icon'}
+                            width={50}
+                            height={50}
+                            className="h-6 w-6 object-cover mr-1"
+                          />
                           {res?.title[0].text.content ? (
                             res?.title[0].text.content.slice(0, 50)
                           ) : (
