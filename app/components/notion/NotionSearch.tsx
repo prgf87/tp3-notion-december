@@ -47,67 +47,129 @@ export default function Search({}: Props) {
               //       <p>Results: {results.length}</p>
               //     </th>
               //   ) &&
-              results.map((res: any, i: number) => {
-                console.log(res);
+              results
+                .sort((a, b) => {
+                  console.log(a);
+                  console.log(b);
+                  return a.object > b.object;
+                })
+                .map((res: any, i: number) => {
+                  console.log(res);
 
-                // if (res?.title[0].text.content && res?.parent.page_id) {
-                //   return (
-                //     <li
-                //       className="p-0.5 flex hover:bg-gray-900/90 border-b-2"
-                //       key={res.id}
-                //     >
-                //       <Link
-                //         href={`/${res?.parent.page_id as string}`}
-                //         onClick={() => {
-                //           setQuery('');
-                //         }}
-                //       >
-                //         <p className="flex">
-                //           <Image
-                //             src={
-                //               res?.icon?.external?.url ? (
-                //                 res?.icon?.external?.url
-                //               ) : res?.icon?.emoji ? (
-                //                 <span>{res?.icon?.emoji}</span>
-                //               ) : (
-                //                 logo
-                //               )
-                //             }
-                //             alt={'Page Icon'}
-                //             width={50}
-                //             height={50}
-                //             className="h-6 w-6 object-cover mr-1"
-                //           />
-                //           {res?.title[0].text.content ? (
-                //             res?.title[0].text.content.slice(0, 50)
-                //           ) : (
-                //             <p>Broken</p>
-                //           )}
-                //         </p>
-                //       </Link>
-                //     </li>
-                //   );
-                // } else {
-                //   return <li key={i}>broken link</li>;
-                // }
-                return (
-                  <li
-                    key={i}
-                    className="flex justify-start items-center hover:bg-gray-900/90 border-b-2"
-                  >
-                    <Image
-                      src={logo}
-                      width={50}
-                      height={50}
-                      alt="logo"
-                      className="h-6 w-6 p-0.5 mr-1"
-                    />{' '}
-                    <p>hello</p>
-                  </li>
-                );
-              })}
+                  // if (res?.title[0].text.content && res?.parent.page_id) {
+                  //   return (
+                  //     <li
+                  //       className="p-0.5 flex hover:bg-gray-900/90 border-b-2"
+                  //       key={res.id}
+                  //     >
+                  //       <Link
+                  //         href={`/${res?.parent.page_id as string}`}
+                  //         onClick={() => {
+                  //           setQuery('');
+                  //         }}
+                  //       >
+                  //         <p className="flex">
+                  //           <Image
+                  //             src={
+                  //               res?.icon?.external?.url ? (
+                  //                 res?.icon?.external?.url
+                  //               ) : res?.icon?.emoji ? (
+                  //                 <span>{res?.icon?.emoji}</span>
+                  //               ) : (
+                  //                 logo
+                  //               )
+                  //             }
+                  //             alt={'Page Icon'}
+                  //             width={50}
+                  //             height={50}
+                  //             className="h-6 w-6 object-cover mr-1"
+                  //           />
+                  //           {res?.title[0].text.content ? (
+                  //             res?.title[0].text.content.slice(0, 50)
+                  //           ) : (
+                  //             <p>Broken</p>
+                  //           )}
+                  //         </p>
+                  //       </Link>
+                  //     </li>
+                  //   );
+                  // } else {
+                  //   return <li key={i}>broken link</li>;
+                  // }]
+                  if (
+                    res.object === 'page' &&
+                    res.id !== 'e600a555-2399-45e3-b856-b3c27bc29d16' &&
+                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb'
+                  ) {
+                    return (
+                      <li
+                        key={i}
+                        className="p-0.5 flex  justify-start items-center hover:bg-gray-900/90 border-b-2"
+                      >
+                        <Link
+                          href={`/${res.id as string}`}
+                          onClick={() => {
+                            setQuery('');
+                          }}
+                        >
+                          <div className="flex items-center">
+                            <Image
+                              src={logo}
+                              width={50}
+                              height={50}
+                              alt="logo"
+                              className="h-6 w-6 object-cover p-0.5 mr-1"
+                            />{' '}
+                            <p>hello</p>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  } else if (
+                    res.object === 'database' &&
+                    res.id !== 'e600a555-2399-45e3-b856-b3c27bc29d16' &&
+                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb'
+                  ) {
+                    return (
+                      <li
+                        className="p-0.5 flex hover:bg-gray-900/90 border-b-2"
+                        key={res.id}
+                      >
+                        <Link
+                          href={`/${res?.parent.page_id as string}`}
+                          onClick={() => {
+                            setQuery('');
+                          }}
+                        >
+                          <div className="flex items-center">
+                            <Image
+                              src={
+                                res?.icon?.external?.url ? (
+                                  res?.icon?.external?.url
+                                ) : res?.icon?.emoji ? (
+                                  <span>{res?.icon?.emoji}</span>
+                                ) : (
+                                  logo
+                                )
+                              }
+                              alt={'Page Icon'}
+                              width={50}
+                              height={50}
+                              className="h-6 w-6 object-cover p-0.5 mr-1"
+                            />
+                            {res?.title[0].text.content ? (
+                              res?.title[0].text.content.slice(0, 50)
+                            ) : (
+                              <p>Broken</p>
+                            )}
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
             {results.length > 0 && query.length > 0 && (
-              <li className="sticky bottom-0  border-t-2 bg-gray-700">
+              <li className="sticky bottom-0 border-t-2 border-b-2 bg-gray-700 z-10">
                 Results: {results.length}
               </li>
             )}
