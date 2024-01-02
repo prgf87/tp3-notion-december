@@ -59,13 +59,13 @@ export default function Search({}: Props) {
                         <p className="flex">
                           <Image
                             src={
-                              res?.icon?.external?.url
-                                ? res?.icon?.external?.url
-                                : res?.cover?.external.url
-                                  ? res?.cover?.external.url
-                                  : res?.icon?.emoji
-                                    ? res?.icon?.emoji
-                                    : logo
+                              res?.icon?.external?.url ? (
+                                res?.icon?.external?.url
+                              ) : res?.icon?.emoji ? (
+                                <span>{res?.icon?.emoji}</span>
+                              ) : (
+                                logo
+                              )
                             }
                             alt={'Page Icon'}
                             width={50}
@@ -83,6 +83,7 @@ export default function Search({}: Props) {
                   );
                 }
               })}
+            {results.length > 0 && <li>Results: {results.length}</li>}
           </ul>
         </div>
       </div>

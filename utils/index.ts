@@ -56,7 +56,7 @@ export async function fetchCategories() {
   return response;
 }
 
-export async function searchNotion(query: string = 'Love') {
+export async function searchNotion(query = '') {
   const response = await notion.search({
     query: query,
     filter: {
@@ -67,7 +67,7 @@ export async function searchNotion(query: string = 'Love') {
       direction: 'descending',
       timestamp: 'last_edited_time',
     },
-    page_size: 25,
+    // page_size: 20,
   });
   // console.log('########Search: ', response);
   return response;
