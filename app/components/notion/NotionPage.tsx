@@ -5,7 +5,8 @@ import { NotionRenderer } from 'react-notion-x';
 import dynamic from 'next/dynamic';
 
 // import '@/app/styles/notion-styles.css';
-import 'react-notion-x/src/styles.css';
+import '@/app/styles/notion-renderer-styles.css';
+// import 'react-notion-x/src/styles.css';
 
 import { ExtendedRecordMap } from 'notion-types';
 import Image from 'next/image';

@@ -5,9 +5,8 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import logo from '@/public/logo.png';
 
-type Props = {};
-
-export default function Search({}: Props) {
+//
+export default function Search() {
   const [query, setQuery] = useState<string>('');
   const [results, setResults] = useState([]);
   return (
@@ -42,16 +41,15 @@ export default function Search({}: Props) {
         <div className="absolute min-w-[550px] max-h-[200px]">
           <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95 overflow-y-scroll max-h-[50vh]">
             {query.length > 0 &&
-              // (
-              //     <th>
-              //       <p>Results: {results.length}</p>
-              //     </th>
-              //   ) &&
               results
-                .sort((a, b) => {
-                  console.log(a);
-                  console.log(b);
-                  return a.object > b.object;
+                .sort((a: { object: string }, b: { object: string }) => {
+                  if (a.object === 'database' && b.object === 'page') {
+                    return -1; // 'database' comes before 'page'
+                  } else if (a.object === 'page' && b.object === 'database') {
+                    return 1;
+                  } else {
+                    return 0; // order remains unchanged
+                  }
                 })
                 .map((res: any, i: number) => {
                   console.log(res);
@@ -128,7 +126,9 @@ export default function Search({}: Props) {
                   } else if (
                     res.object === 'database' &&
                     res.id !== 'e600a555-2399-45e3-b856-b3c27bc29d16' &&
-                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb'
+                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb' &&
+                    res?.title[0].text.content &&
+                    res?.parent.page_id
                   ) {
                     return (
                       <li
