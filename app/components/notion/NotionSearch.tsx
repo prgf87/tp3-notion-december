@@ -40,7 +40,7 @@ export default function Search({}: Props) {
       </form>
       <div className="relative">
         <div className="absolute min-w-[550px] max-h-[200px]">
-          <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95">
+          <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95 overflow-y-scroll max-h-[50vh]">
             {query.length > 0 &&
               // (
               //     <th>
@@ -90,10 +90,26 @@ export default function Search({}: Props) {
                 // } else {
                 //   return <li key={i}>broken link</li>;
                 // }
-                return <li key={i}>hello</li>;
+                return (
+                  <li
+                    key={i}
+                    className="flex justify-start items-center hover:bg-gray-900/90 border-b-2"
+                  >
+                    <Image
+                      src={logo}
+                      width={50}
+                      height={50}
+                      alt="logo"
+                      className="h-6 w-6 p-0.5 mr-1"
+                    />{' '}
+                    <p>hello</p>
+                  </li>
+                );
               })}
             {results.length > 0 && query.length > 0 && (
-              <li className="border-b-2 p-0.5">Results: {results.length}</li>
+              <li className="sticky bottom-0  border-t-2 bg-gray-700">
+                Results: {results.length}
+              </li>
             )}
           </ul>
         </div>

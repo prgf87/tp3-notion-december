@@ -67,7 +67,7 @@ export async function searchNotion(query = '') {
     //   direction: 'descending',
     //   timestamp: 'last_edited_time',
     // },
-    page_size: 50,
+    // page_size: 50,
   });
   // console.log('########Search: ', response);
   return response;
