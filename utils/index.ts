@@ -59,15 +59,15 @@ export async function fetchCategories() {
 export async function searchNotion(query = '') {
   const response = await notion.search({
     query: query,
-    filter: {
-      value: 'database',
-      property: 'object',
-    },
-    sort: {
-      direction: 'descending',
-      timestamp: 'last_edited_time',
-    },
-    // page_size: 20,
+    // filter: {
+    //   value: 'database',
+    //   property: 'object',
+    // },
+    // sort: {
+    //   direction: 'descending',
+    //   timestamp: 'last_edited_time',
+    // },
+    page_size: 50,
   });
   // console.log('########Search: ', response);
   return response;

@@ -19,9 +19,10 @@ export default function Search({}: Props) {
             .then((res) => {
               const { results } = res;
               console.log(results);
-              return results.map((res) => {
-                if (res.object === 'database') return res;
-              });
+              return results;
+              // .map((res) => {
+              //   if (res.object === 'database') return res;
+              // });
             })
             .then((res) => {
               setResults(res as any);
@@ -41,49 +42,59 @@ export default function Search({}: Props) {
         <div className="absolute min-w-[550px] max-h-[200px]">
           <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95">
             {query.length > 0 &&
-              results.map((res: any) => {
+              // (
+              //     <th>
+              //       <p>Results: {results.length}</p>
+              //     </th>
+              //   ) &&
+              results.map((res: any, i: number) => {
                 console.log(res);
 
-                if (res?.title[0].text.content && res?.parent.page_id) {
-                  return (
-                    <li
-                      className="p-0.5 flex hover:bg-gray-900/90 border-t-2"
-                      key={res.id}
-                    >
-                      <Link
-                        href={`/${res?.parent.page_id as string}`}
-                        onClick={() => {
-                          setQuery('');
-                        }}
-                      >
-                        <p className="flex">
-                          <Image
-                            src={
-                              res?.icon?.external?.url ? (
-                                res?.icon?.external?.url
-                              ) : res?.icon?.emoji ? (
-                                <span>{res?.icon?.emoji}</span>
-                              ) : (
-                                logo
-                              )
-                            }
-                            alt={'Page Icon'}
-                            width={50}
-                            height={50}
-                            className="h-6 w-6 object-cover mr-1"
-                          />
-                          {res?.title[0].text.content ? (
-                            res?.title[0].text.content.slice(0, 50)
-                          ) : (
-                            <p>Broken</p>
-                          )}
-                        </p>
-                      </Link>
-                    </li>
-                  );
-                }
+                // if (res?.title[0].text.content && res?.parent.page_id) {
+                //   return (
+                //     <li
+                //       className="p-0.5 flex hover:bg-gray-900/90 border-b-2"
+                //       key={res.id}
+                //     >
+                //       <Link
+                //         href={`/${res?.parent.page_id as string}`}
+                //         onClick={() => {
+                //           setQuery('');
+                //         }}
+                //       >
+                //         <p className="flex">
+                //           <Image
+                //             src={
+                //               res?.icon?.external?.url ? (
+                //                 res?.icon?.external?.url
+                //               ) : res?.icon?.emoji ? (
+                //                 <span>{res?.icon?.emoji}</span>
+                //               ) : (
+                //                 logo
+                //               )
+                //             }
+                //             alt={'Page Icon'}
+                //             width={50}
+                //             height={50}
+                //             className="h-6 w-6 object-cover mr-1"
+                //           />
+                //           {res?.title[0].text.content ? (
+                //             res?.title[0].text.content.slice(0, 50)
+                //           ) : (
+                //             <p>Broken</p>
+                //           )}
+                //         </p>
+                //       </Link>
+                //     </li>
+                //   );
+                // } else {
+                //   return <li key={i}>broken link</li>;
+                // }
+                return <li key={i}>hello</li>;
               })}
-            {results.length > 0 && <li>Results: {results.length}</li>}
+            {results.length > 0 && query.length > 0 && (
+              <li className="border-b-2 p-0.5">Results: {results.length}</li>
+            )}
           </ul>
         </div>
       </div>
