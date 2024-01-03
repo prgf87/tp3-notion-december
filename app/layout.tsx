@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} min-h-screen`}>
-        <div className="top-0">
+        <div className="sticky left-0 top-0 right-0 z-[2000]">
           <Header />
         </div>
-        <div className="min-h-fit min-w-screen max-w-screen mx-auto">
+        <div className="relative min-h-fit min-w-[100%] mx-auto">
           {children}
         </div>
-        <div className="bottom-0">
+        <div className="relative bottom-0">
           <Footer />
         </div>
       </body>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import logo from '@/public/logo.png';
-import Search from './Search';
+import Search from '../notion/NotionSearch';
 // import { Search } from 'react-notion-x';
 // import { search } from '@/utils';
 // import { Search } from 'react-notion-x';
@@ -21,20 +21,21 @@ export default async function Header({}: Props) {
               alt="Website Logo"
               width={150}
               height={150}
+              placeholder="blur"
               className="h-[70px] max-w-[70px] transition-all duration-300 ease-linear hover:rounded-2xl hover:border-2 hover:border-black/70"
             />
           </Link>
         </div>
         <div className="flex justify-center items-center space-x-8">
-          <Link href={'/about'}>About Us</Link>
-          <Link href={'https://www.buymeacoffee.com/tp4life'} target="_blank">
-            Buy me a Coffee
-          </Link>
+          <Search />
         </div>
         <div className="flex justify-center items-center space-x-8">
+          <Link href={'https://www.buymeacoffee.com/tp4life'} target="_blank">
+            Donate
+          </Link>
+          <Link href={'/about'}>About Us</Link>
+
           <Link href={'/login'}>User Area</Link>
-          {/* <Search block={} search={search} /> */}
-          <Search />
         </div>
       </div>
     </>
