@@ -1,13 +1,13 @@
-'use client';
-import { searchNotion } from '@/utils';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import logo from '@/public/logo.png';
+"use client";
+import { searchNotion } from "@/utils";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import logo from "@/public/logo.png";
 
 //
 export default function Search() {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState([]);
   return (
     <div>
@@ -43,9 +43,9 @@ export default function Search() {
             {query.length > 0 &&
               results
                 .sort((a: { object: string }, b: { object: string }) => {
-                  if (a.object === 'database' && b.object === 'page') {
+                  if (a.object === "database" && b.object === "page") {
                     return -1; // 'database' comes before 'page'
-                  } else if (a.object === 'page' && b.object === 'database') {
+                  } else if (a.object === "page" && b.object === "database") {
                     return 1;
                   } else {
                     return 0; // order remains unchanged
@@ -95,19 +95,20 @@ export default function Search() {
                   //   return <li key={i}>broken link</li>;
                   // }]
                   if (
-                    res.object === 'page' &&
-                    res.id !== 'e600a555-2399-45e3-b856-b3c27bc29d16' &&
-                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb'
+                    res.object === "page" &&
+                    res.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
+                    res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb"
                   ) {
+                    console.log("###### Search Result - Page: ", res.page);
                     return (
                       <li
                         key={i}
                         className="p-0.5 flex  justify-start items-center hover:bg-gray-900/90 border-b-2"
                       >
                         <Link
-                          href={`/${res.id as string}`}
+                          href={`/${res.parent.database_id as string}`}
                           onClick={() => {
-                            setQuery('');
+                            setQuery("");
                           }}
                         >
                           <div className="flex items-center">
@@ -117,16 +118,16 @@ export default function Search() {
                               height={50}
                               alt="logo"
                               className="h-6 w-6 object-cover p-0.5 mr-1"
-                            />{' '}
-                            <p>hello</p>
+                            />{" "}
+                            {/* <p>{res.page.properties.Name.}</p> */}
                           </div>
                         </Link>
                       </li>
                     );
                   } else if (
-                    res.object === 'database' &&
-                    res.id !== 'e600a555-2399-45e3-b856-b3c27bc29d16' &&
-                    res.id !== '201222b4-5e6b-43bf-95e0-95f99c9c7beb' &&
+                    res.object === "database" &&
+                    res.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
+                    res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb" &&
                     res?.title[0].text.content &&
                     res?.parent.page_id
                   ) {
@@ -138,7 +139,7 @@ export default function Search() {
                         <Link
                           href={`/${res?.parent.page_id as string}`}
                           onClick={() => {
-                            setQuery('');
+                            setQuery("");
                           }}
                         >
                           <div className="flex items-center">
@@ -152,7 +153,7 @@ export default function Search() {
                                   logo
                                 )
                               }
-                              alt={'Page Icon'}
+                              alt={"Page Icon"}
                               width={50}
                               height={50}
                               className="h-6 w-6 object-cover p-0.5 mr-1"
