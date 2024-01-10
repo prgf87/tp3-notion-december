@@ -2248,7 +2248,7 @@ svg.notion-page-icon {
 .notion-lite .notion-page {
   width: 100%;
   padding: 0;
-  /* padding: calc(max(2vmin, 8px)); */
+  padding: calc(max(2vmin, 8px));
 }
 
 .notion-lite .notion-collection-header,

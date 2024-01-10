@@ -18,7 +18,7 @@ type Props = { recordMap: ExtendedRecordMap };
 
 export default function NotionCategories({ recordMap }: Props) {
   return (
-    <div>
+    <div className="max-w-3xl 2xl:max-w-7xl">
       <NotionRenderer
         recordMap={recordMap}
         fullPage={false}

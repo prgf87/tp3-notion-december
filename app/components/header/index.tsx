@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import logo from "@/public/logo.png";
 import coffee from "@/public/coffee-white.png";
-import Search from "../notion/NotionSearch";
 
 type Props = {};
 
@@ -55,12 +54,9 @@ export default async function Header({}: Props) {
             href={"/a35b86baa3f24f01ac5ec3b7d2c4d410"}
             className="hover:brightness-75"
           >
-            Share Your Feedback
+            Share Feedback
           </Link>
         </div>
-        {/* <div className="col-span-2 flex justify-center items-center space-x-8">
-          <Search />
-        </div> */}
       </div>
     </>
   );

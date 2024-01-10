@@ -10,7 +10,7 @@ export default function Search() {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState([]);
   return (
-    <div>
+    <div className="py-2">
       <form
         onInput={(e) => {
           e.preventDefault();
@@ -43,7 +43,7 @@ export default function Search() {
         }}
       >
         <input
-          className="text-black px-2 py-1"
+          className="text-black px-2 py-1 rounded shadow-lg w-80"
           placeholder="Search"
           value={query}
           onChange={(e) => {
@@ -150,7 +150,7 @@ export default function Search() {
                               alt="logo"
                               className="h-6 w-6 object-cover p-0.5 mr-1"
                             />{" "}
-                            <p>
+                            <p className="text-white font-semibold">
                               {resultName.length > 50
                                 ? resultName.substring(0, 50) + "... "
                                 : resultName}
@@ -194,7 +194,9 @@ export default function Search() {
                               className="h-6 w-6 object-cover p-0.5 mr-1"
                             />
                             {res?.title[0].text.content ? (
-                              res?.title[0].text.content.slice(0, 50)
+                              <p className="text-white font-semibold">
+                                {res?.title[0].text.content.slice(0, 50)}
+                              </p>
                             ) : (
                               <p>Broken</p>
                             )}
