@@ -78,17 +78,22 @@ export default function Loader({}: Props) {
                       className="h-40 w-full object-cover object-center"
                     />
                     <div className="flex space-x-4">
-                      <Image
+                      {/* <Image
                         src={page.cover.external.url}
                         alt={page.id ? (page.id as string) : "Icon"}
                         width={1920}
                         height={1080}
                         className="object-cover h-10 w-10 m-2"
-                      />
-                      <p className="py-2 px-4 font-semibold">
-                        {page.properties?.name.title[0].plain_text as string}
+                      /> */}
+                      <p className="h-66 py-2 px-4 font-semibold text-sm">
+                        {(
+                          page.properties?.name.title[0].plain_text as string
+                        ).substring(0, 35) + "..."}
                       </p>
                     </div>
+                    <button className="btn-primary">
+                      <Link href={`/${page.id}`}>Go to Page</Link>
+                    </button>
                   </div>
                 </Link>
               );
