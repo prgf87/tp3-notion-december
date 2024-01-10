@@ -140,7 +140,6 @@ export default function Search() {
                           href={`/${res?.parent.page_id as string}`}
                           onClick={() => {
                             setQuery("");
-                            git;
                           }}
                         >
                           <div className="flex items-center">
