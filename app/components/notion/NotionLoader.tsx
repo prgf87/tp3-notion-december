@@ -63,7 +63,7 @@ export default function Loader({}: Props) {
                 <Link
                   href={`/${page.id}`}
                   key={page.id}
-                  className="border border-gray-800/30 m-2 rounded-md"
+                  className="border border-gray-700/10 m-2 rounded-md hover:bg-gray-400/20 shadow-md"
                 >
                   <div className="">
                     <Image
@@ -85,15 +85,23 @@ export default function Loader({}: Props) {
                         height={1080}
                         className="object-cover h-10 w-10 m-2"
                       /> */}
-                      <p className="h-66 py-2 px-4 font-semibold text-sm">
-                        {(
-                          page.properties?.name.title[0].plain_text as string
-                        ).substring(0, 35) + "..."}
+                      <p className="h-66 py-3 px-4 font-semibold text-sm">
+                        {page.properties?.name.title[0].plain_text.length > 50
+                          ? page.properties?.name.title[0].plain_text.substring(
+                              0,
+                              45
+                            ) + "..."
+                          : page.properties?.name.title[0].plain_text}
                       </p>
                     </div>
-                    <button className="btn-primary">
-                      <Link href={`/${page.id}`}>Go to Page</Link>
-                    </button>
+                    {/* <div className="flex justify-center items-center pb-4">
+                      <Link
+                        href={`/${page.id}`}
+                        className="px-4 py-2 bg-pink-600 text-white font-semibold text-xs rounded-md"
+                      >
+                        Go to Page
+                      </Link>
+                    </div> */}
                   </div>
                 </Link>
               );

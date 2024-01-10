@@ -24,6 +24,20 @@ export default function Search() {
               // });
             })
             .then((res) => {
+              // setResults(
+              //   res.filter((r) => {
+              //     console.log(r);
+              //     if (r.object === "database") {
+              //       return r.title[0].plain_text
+              //         .toLowerCase()
+              //         .includes(query.toLowerCase());
+              //     } else {
+              //       return r.properties.Slug?.formula.string
+              //         .toLowerCase()
+              //         .includes(query.toLowerCase());
+              //     }
+              //   }) as any
+              // );
               setResults(res as any);
             });
         }}
@@ -52,7 +66,7 @@ export default function Search() {
                   }
                 })
                 .map((res: any, i: number) => {
-                  console.log(res);
+                  // console.log(res);
 
                   // if (res?.title[0].text.content && res?.parent.page_id) {
                   //   return (
@@ -97,9 +111,18 @@ export default function Search() {
                   if (
                     res.object === "page" &&
                     res.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
-                    res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb"
+                    res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb" &&
+                    res.parent.database_id
                   ) {
                     console.log("###### Search Result - Page: ", res.page);
+                    const resultName = res.url
+                      .substring(22, res.url.length - 32)
+                      .split("-")
+                      .join(" ", 1);
+                    console.log("Search Result Name: ", resultName);
+
+                    const resultIcon = "";
+
                     return (
                       <li
                         key={i}
@@ -113,13 +136,25 @@ export default function Search() {
                         >
                           <div className="flex items-center">
                             <Image
-                              src={logo}
+                              src={
+                                res?.icon?.external?.url ? (
+                                  res?.icon?.external?.url
+                                ) : res?.icon?.emoji ? (
+                                  <span>{res?.icon?.emoji}</span>
+                                ) : (
+                                  logo
+                                )
+                              }
                               width={50}
                               height={50}
                               alt="logo"
                               className="h-6 w-6 object-cover p-0.5 mr-1"
                             />{" "}
-                            {/* <p>{res.page.properties.Name.}</p> */}
+                            <p>
+                              {resultName.length > 50
+                                ? resultName.substring(0, 50) + "... "
+                                : resultName}
+                            </p>
                           </div>
                         </Link>
                       </li>

@@ -15,16 +15,6 @@ html {
   /* background-color: pink; */
 }
 
-.btn-primary {
-  padding: 10px 16px;
-  background: hotpink;
-  color: white;
-  margin: 4px auto 4px auto;
-  margin-inline: auto;
-  border-radius: 8px;
-  z-index: 2;
-}
-
 .btn-primary:hover {
   opacity: 0.7;
 }
