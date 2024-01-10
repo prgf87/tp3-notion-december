@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import logo from "@/public/logo.png";
+import coffee from "@/public/coffee-white.png";
 import Search from "../notion/NotionSearch";
-// import { Search } from 'react-notion-x';
-// import { search } from '@/utils';
-// import { Search } from 'react-notion-x';
 
 type Props = {};
 
@@ -26,21 +24,43 @@ export default async function Header({}: Props) {
             />
           </Link>
         </div>
-        {/* <div className="flex justify-center items-center space-x-8">
-          <Search />
-        </div> */}
         <div className="col-span-2 flex justify-center items-center space-x-8">
-          <Link href={"https://www.buymeacoffee.com/tp4life"} target="_blank">
-            Donate
+          <Link
+            href={"https://www.buymeacoffee.com/tp4life"}
+            target="_blank"
+            className="flex items-center hover:brightness-75"
+          >
+            Buy me a{" "}
+            <Image
+              src={coffee}
+              alt="Website Logo"
+              width={150}
+              height={150}
+              placeholder="blur"
+              className="h-6 w-4 object-cover ml-1"
+            />
           </Link>
-          <Link href={"/537536d77d304f20909472994442451f"}>About Us</Link>
+          <Link
+            href={"/537536d77d304f20909472994442451f"}
+            className="hover:brightness-75"
+          >
+            About Us
+          </Link>
 
-          <Link href={"/login"}>User Area</Link>
+          <Link href={"/login"} className="hover:brightness-75">
+            User Area
+          </Link>
 
-          <Link href={"/a35b86baa3f24f01ac5ec3b7d2c4d410"}>
+          <Link
+            href={"/a35b86baa3f24f01ac5ec3b7d2c4d410"}
+            className="hover:brightness-75"
+          >
             Share Your Feedback
           </Link>
         </div>
+        {/* <div className="col-span-2 flex justify-center items-center space-x-8">
+          <Search />
+        </div> */}
       </div>
     </>
   );
