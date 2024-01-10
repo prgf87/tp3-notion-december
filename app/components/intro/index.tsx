@@ -1,4 +1,7 @@
-import React from 'react';
+import Link from "next/link";
+import React from "react";
+import thumbsup from "@/public/thumbs-up.jpg";
+import Image from "next/image";
 
 type Props = {};
 
@@ -14,31 +17,55 @@ export default function Intro({}: Props) {
           posts, looking for advice on what to say. Communication is tricky. We
           all bring our own biases, emotions, and histories to the table.
         </p>
-        <p className="text-lg">
+        <p className="text-lg font-bold">
           This site will help you navigate those tricky subjects, allowing you
           to build healthier and happier relationships.
         </p>
         <p className="text-lg">
           Talking Points for Life is a library of ready-to-use messages for
-          challenging social situations e.g., How to respond to nosy or
-          inappropriate questions{' '}
+          challenging social situations e.g.,{" "}
+          <Link
+            href={"/d7bf60a711e44017980ab7ca4fb3f6b5"}
+            className="text-gray-700 underline font-bold hover:text-gray-200"
+          >
+            How to respond to nosy or inappropriate questions{" "}
+          </Link>
         </p>
         <p className="text-lg">
           Not sure how to tell your best friend she&apos;s not your Maid of
-          Honor? Check out How to tell someone they will not be your Bridesmaid
+          Honor? Check out{" "}
+          <Link
+            href={"/41420f6ef1d14c40bb94e5439047d4f8"}
+            className="text-gray-700 underline font-bold hover:text-gray-200"
+          >
+            How to tell someone they will not be your Bridesmaid
+          </Link>
         </p>
         <p className="text-lg">
-          Need to draw a boundary? We&apos;ve got you covered: How to set
-          boundaries
+          Need to draw a boundary? We&apos;ve got you covered:
+          <Link
+            href={"/dd3d38aa898741d59de80cf1fbf3615e"}
+            className="text-gray-700 underline font-bold hover:text-gray-200"
+          >
+            How to set boundaries
+          </Link>
         </p>
         <p className="text-lg">
           Want to give sympathy to someone who lost a parent? Here&apos;s a good
-          place to start: How to offer comfort/give sympathy{' '}
+          place to start:
+          <Link
+            href={"/564acfddc4e74ef19d23fe3d68cdb60e"}
+            className="text-gray-700 underline font-bold hover:text-gray-200"
+          ></Link>
+          How to offer comfort/give sympathy{" "}
         </p>
-        <p className="text-lg">
-          You&apos;re welcome to use these talking points as written or adapt
-          them to your style and voice — whatever works best for you.
-        </p>
+        <div className="bg-pink-700 px-8 py-4 flex space-x-4 text-white font-bold">
+          <Image src={thumbsup} alt="Thumbs Up icon" className="h-8 w-8" />
+          <p>
+            You&apos;re welcome to use these talking points as written or adapt
+            them to your style and voice — whatever works best for you.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export default async function Home() {
       </h1>
       <Categories />
       <h1 className="text-5xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
-        Talking Points for Life
+        The Whole Catalogue
       </h1>
       <Loader />
     </main>
