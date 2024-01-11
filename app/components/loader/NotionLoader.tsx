@@ -16,6 +16,8 @@ const Collection = dynamic(() =>
 );
 
 export default function NotionLoader({ recordMap }: Props) {
+  // const filteredRecordMap = recordMap.filter(())
+  // console.log(recordMap, "///recordmap");
   return (
     <div className="max-w-3xl xl:max-w-7xl z-0">
       <div className="flex justify-center items-center">

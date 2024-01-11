@@ -1203,7 +1203,7 @@ svg.notion-page-icon {
   display: inline-block;
   width: 14px;
   height: 14px;
-  fill: var(--fg-color);
+  fill: white;
   margin-right: 6px;
 }
 
@@ -1211,7 +1211,8 @@ svg.notion-page-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--fg-color);
+  color: white;
+  font-weight: 500;
 }
 
 .notion-table {
@@ -2827,9 +2828,9 @@ svg.notion-page-icon {
   align-items: center;
   user-select: none;
   cursor: pointer;
-  /* color: #7a7a7a; */
   font-size: 12px;
-  background: #2222222a;
+  background: #ff1493;
+  /* color: white; */
   border-radius: 4px;
   margin: 2px;
 }
