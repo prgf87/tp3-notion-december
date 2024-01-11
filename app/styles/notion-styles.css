@@ -1203,7 +1203,7 @@ svg.notion-page-icon {
   display: inline-block;
   width: 14px;
   height: 14px;
-  fill: white;
+  fill: rgb(255, 234, 254);
   margin-right: 6px;
 }
 
@@ -1211,7 +1211,7 @@ svg.notion-page-icon {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: white;
+  color: rgb(255, 234, 254);
   font-weight: 500;
 }
 
@@ -1366,7 +1366,7 @@ svg.notion-page-icon {
   /* border-right: 1px solid var(--fg-color-1); */
 }
 .notion-table-cell:hover {
-  opacity: 0.7;
+  opacity: 0.9;
   background: #ff5fb4;
 }
 
@@ -1607,16 +1607,21 @@ svg.notion-page-icon {
   position: relative;
   padding-left: 0;
   transition: padding 200ms ease-out;
-  max-width: 100%;
+  width: 100%;
 }
 
 .notion-list-body {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--fg-color-1);
-  padding-top: 8px;
+  display: grid;
+  grid-template-columns: auto(250px, 1fr);
+  grid-auto-rows: 1fr;
+  /* border-top: 1px solid var(--fg-color-1); */
+  padding-top: 16px;
+  padding-bottom: 16px;
   max-width: 100%;
   overflow: hidden;
+  background: #ff149162;
+  opacity: 0.9;
+  z-index: 0;
 }
 
 .notion-list-item {
@@ -1625,15 +1630,25 @@ svg.notion-page-icon {
   align-items: center;
   padding: 0 4px;
   margin: 1px 0;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
+  scale: 98%;
+  font-size: 16px;
+}
+
+.notion-list-body .notion-list-item:hover {
+  opacity: 1;
+  border: 1px solid var(--bg-color-0);
+  background: #770e858c;
+  border-radius: 4px;
+  scale: 100%;
 }
 
 .notion-list-item-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.3;
 }
 
@@ -2047,7 +2062,7 @@ svg.notion-page-icon {
 
 .notion-page-title {
   display: inline-flex;
-  max-width: 100%;
+  width: 100%;
   align-items: center;
   line-height: 1.3;
   transition: background 120ms ease-in 0s;
@@ -2829,19 +2844,20 @@ svg.notion-page-icon {
   user-select: none;
   cursor: pointer;
   font-size: 12px;
-  background: #ff1493;
+  background-color: var(--fg-color-2);
   /* color: white; */
   border-radius: 4px;
   margin: 2px;
 }
 
 .notion-collection-view-tabs-content-item:hover {
-  background-color: var(--fg-color-2);
+  /* background-color: var(--fg-color-2); */
+  background: #ff46a8;
   border-radius: 3px;
 }
 
 .notion-collection-view-tabs-content-item-active {
-  background-color: var(--fg-color-2);
+  background: #ff1493;
   font-weight: bold;
 }
 
