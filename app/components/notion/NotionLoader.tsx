@@ -110,7 +110,14 @@ export default function Loader({}: Props) {
         </div>
       </div>
       <div ref={ref} className="flex justify-center items-center">
-        {loading && <div className="loader" />}
+        {loading && (
+          <div className="py-8 px-8">
+            <h1 className="py-2 font-bold text-lg">Loading content...</h1>
+            <div className="w-full flex justify-center items-center pt-4">
+              <div className="loader" />
+            </div>
+          </div>
+        )}
       </div>
       {end && (
         <div className="w-full text-center text-3xl">

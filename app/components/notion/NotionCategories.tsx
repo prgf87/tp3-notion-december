@@ -18,19 +18,21 @@ type Props = { recordMap: ExtendedRecordMap };
 
 export default function NotionCategories({ recordMap }: Props) {
   return (
-    <div className="max-w-3xl 2xl:max-w-7xl">
-      <NotionRenderer
-        recordMap={recordMap}
-        fullPage={false}
-        darkMode={false}
-        components={{
-          Collection,
-          nextImage: Image,
-          nextLink: Link,
-        }}
-        previewImages={true}
-        disableHeader={true}
-      />
+    <div className="max-w-3xl xl:max-w-7xl">
+      <div className="flex justify-center items-center">
+        <NotionRenderer
+          recordMap={recordMap}
+          fullPage={false}
+          darkMode={false}
+          components={{
+            Collection,
+            nextImage: Image,
+            nextLink: Link,
+          }}
+          previewImages={true}
+          disableHeader={true}
+        />
+      </div>
     </div>
   );
 }

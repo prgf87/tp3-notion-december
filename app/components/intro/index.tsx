@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import thumbsup from "@/public/thumbs-up.jpg";
+import thumbsup from "@/public/thumbs-up.png";
 import Image from "next/image";
 
 type Props = {};

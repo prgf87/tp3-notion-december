@@ -1,10 +1,10 @@
-'use server';
-import { Client } from '@notionhq/client';
+"use server";
+import { Client } from "@notionhq/client";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DB_ID as string;
 const databaseId2 = process.env.NOTION_DB2_ID as string;
-const pageSize: number = 9;
+const pageSize: number = 6;
 
 export async function fetchPages() {
   //* Query made looking for the first complete pages/posts */
@@ -13,7 +13,7 @@ export async function fetchPages() {
     filter: {
       or: [
         {
-          property: 'complete',
+          property: "complete",
           checkbox: {
             equals: true,
           },
@@ -33,7 +33,7 @@ export async function fetchMorePages(cursor: string) {
     filter: {
       or: [
         {
-          property: 'complete',
+          property: "complete",
           checkbox: {
             equals: true,
           },
@@ -56,7 +56,7 @@ export async function fetchCategories() {
   return response;
 }
 
-export async function searchNotion(query = '') {
+export async function searchNotion(query = "") {
   const response = await notion.search({
     query: query,
     // filter: {

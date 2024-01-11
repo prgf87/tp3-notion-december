@@ -11,9 +11,11 @@ export default async function Home() {
         Categories
       </h1>
       <Categories />
-      <h1 className="text-5xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
-        The Whole Catalogue
-      </h1>
+      <div className="pt-8 pb-2">
+        <h1 className="text-5xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
+          The Whole Catalogue
+        </h1>
+      </div>
       <div className="flex justify-center items-center space-x-8">
         <Search />
       </div>
