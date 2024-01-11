@@ -11,7 +11,7 @@ export default async function Header({}: Props) {
   return (
     <>
       <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-black text-white text-base drop-shadow-lg">
-        <div className="flex justify-center items-center py-8">
+        <div className="flex justify-center items-center py-6">
           <Link href={"/"} className="absolute">
             <Image
               src={logo}
@@ -36,7 +36,7 @@ export default async function Header({}: Props) {
               width={150}
               height={150}
               placeholder="blur"
-              className="h-6 w-4 object-cover ml-1"
+              className="h-6 w-4 object-cover ml-0.5 font-bold"
             />
           </Link>
           <Link

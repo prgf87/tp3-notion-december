@@ -6,7 +6,7 @@ const notion = new NotionAPI();
 
 const getLoader = async () => {
   const response = await notion.getPage("e600a555239945e3b856b3c27bc29d16", {
-    chunkLimit: 6,
+    chunkLimit: 5,
     chunkNumber: 0,
   });
   return response;
