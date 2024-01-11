@@ -9,7 +9,7 @@ export default function Search() {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState([]);
   return (
-    <div className="py-2">
+    <div className="pt-2 pb-8">
       <form
         onInput={(e) => {
           e.preventDefault();
@@ -95,12 +95,12 @@ export default function Search() {
                   res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb" &&
                   res.parent.database_id
                 ) {
-                  console.log("###### Search Result - Page: ", res.page);
+                  // console.log("###### Search Result - Page: ", res.page);
                   const resultName = res.url
                     .substring(22, res.url.length - 32)
                     .split("-")
                     .join(" ", 1);
-                  console.log("Search Result Name: ", resultName);
+                  // console.log("Search Result Name: ", resultName);
 
                   const resultIcon = "";
 

@@ -8,9 +8,14 @@ type Props = {};
 export default function Intro({}: Props) {
   return (
     <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
-      <h1 className="text-7xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
-        Welcome to Talking Points for Life
-      </h1>
+      <div>
+        <h1 className="text-6xl 2xl:text-7xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
+          Welcome to<br></br>Talking Points for Life
+        </h1>
+        <h1 className="text-6xl 2xl:text-7xl text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)] absolute left-[0px] top-[3px] right-0 bottom-0 font-normal opacity-5">
+          Welcome to<br></br>Talking Points for Life
+        </h1>
+      </div>
       <div className="mx-8 2xl:mx-20 py-8 space-y-4">
         <p className="text-lg">
           Too many people are left wandering through Reddit threads and Quora
