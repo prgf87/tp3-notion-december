@@ -1,15 +1,15 @@
 import React from "react";
 import { NotionAPI } from "notion-client";
-import NotionCategories from "../notion/NotionCategories";
+import NotionCategories from "./NotionCategories";
+
 const notion = new NotionAPI();
-type Props = {};
 
 const getCategories = async () => {
   const response = await notion.getPage("222e4acf63964c7e90c55228768a2db9");
   return response;
 };
 
-export default async function Categories({}: Props) {
+export default async function Categories() {
   const categories = await getCategories();
 
   return (
