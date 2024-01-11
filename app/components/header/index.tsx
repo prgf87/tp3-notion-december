@@ -46,9 +46,9 @@ export default async function Header({}: Props) {
             About Us
           </Link>
 
-          <Link href={"/login"} className="hover:brightness-75">
+          {/* <Link href={"/login"} className="hover:brightness-75">
             User Area
-          </Link>
+          </Link> */}
 
           <Link
             href={"/a35b86baa3f24f01ac5ec3b7d2c4d410"}
