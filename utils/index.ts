@@ -59,16 +59,36 @@ export async function fetchCategories() {
 export async function searchNotion(query = "") {
   const response = await notion.search({
     query: query,
-    // filter: {
-    //   value: 'database',
-    //   property: 'object',
-    // },
-    // sort: {
-    //   direction: 'descending',
-    //   timestamp: 'last_edited_time',
-    // },
+    filter: {
+      value: "database",
+      property: "object",
+    },
+    sort: {
+      direction: "descending",
+      timestamp: "last_edited_time",
+    },
+    page_size: 100,
     // page_size: 50,
   });
   // console.log('########Search: ', response);
+  return response;
+}
+
+export async function keepSearchingNotion(query: string, cursor: string) {
+  //* Query made looking for the subsequent pages/posts */
+  const response = await notion.search({
+    query: query,
+    filter: {
+      value: "page",
+      property: "object",
+    },
+    sort: {
+      direction: "descending",
+      timestamp: "last_edited_time",
+    },
+    page_size: 25,
+    start_cursor: cursor,
+  });
+
   return response;
 }

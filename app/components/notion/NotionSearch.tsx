@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logo.png";
-import { searchNotion } from "@/utils";
+import { keepSearchingNotion, searchNotion } from "@/utils";
 
 export default function Search() {
   const [query, setQuery] = useState<string>("");
-  const [results, setResults] = useState([]);
+  const [cursor, setCursor] = useState<string>("");
+  const [searchResults, setResults] = useState([]);
   return (
     <div className="py-4">
       <form
@@ -16,8 +17,14 @@ export default function Search() {
           try {
             searchNotion(query)
               .then((res) => {
-                const { results } = res;
-                console.log("Query Results: ", results);
+                const { results, next_cursor } = res;
+                console.log(
+                  "1. Query response / Looking for cursor: ",
+                  res.next_cursor
+                );
+                if (res.has_more) {
+                  setCursor(next_cursor as string);
+                }
                 return results;
               })
               .then((res) => {
@@ -32,6 +39,19 @@ export default function Search() {
                     }
                   }) as any
                 );
+              })
+              .then(() => {
+                keepSearchingNotion(query, cursor).then((res) => {
+                  console.log("Keep Searching Response", res);
+                  const { results, next_cursor } = res;
+                  console.log(
+                    "1. Query response / Looking for cursor: ",
+                    res.next_cursor
+                  );
+                  if (res.has_more) {
+                    setCursor(next_cursor as string);
+                  }
+                });
               });
           } catch (e) {
             console.log("Query Results Failed - Error: ", e);
@@ -50,8 +70,8 @@ export default function Search() {
       <div className="relative z-10">
         <div className="absolute min-w-[280px] max-h-[200px]">
           <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95 overflow-y-scroll max-h-[50vh]">
-            {query.length > 0 &&
-              results.map((res: any, i: number) => {
+            {/* {query.length > 0 &&
+              searchResults.map((res: any, i: number) => {
                 // console.log(res);
 
                 // if (res?.title[0].text.content && res?.parent.page_id) {
@@ -191,10 +211,10 @@ export default function Search() {
                     </li>
                   );
                 }
-              })}
-            {results.length > 0 && query.length > 0 && (
+              })} */}
+            {searchResults.length > 0 && query.length > 0 && (
               <li className="sticky bottom-0 border-t-2 border-b-2 bg-gray-700 z-10 text-white font-semibold">
-                Results: {results.length}
+                Results: {searchResults.length}
               </li>
             )}
           </ul>
