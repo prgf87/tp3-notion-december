@@ -9,7 +9,7 @@ export default function Search() {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState([]);
   return (
-    <div className="pt-2 pb-8">
+    <div className="py-4">
       <form
         onInput={(e) => {
           e.preventDefault();
@@ -39,8 +39,8 @@ export default function Search() {
         }}
       >
         <input
-          className="text-black px-2 py-1 rounded shadow-lg w-80"
-          placeholder="Search"
+          className="text-black px-2 py-1 rounded shadow-lg w-80 border border-spacing-1 border-gray-400/55"
+          placeholder="Search..."
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);

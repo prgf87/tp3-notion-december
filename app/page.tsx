@@ -13,7 +13,7 @@ export default async function Home() {
             Categories
           </h1>
         </span>
-        {/* <Categories /> */}
+        <Categories />
       </div>
       <div className="pt-8 pb-2">
         <span className="relative drop-shadow-[4px_4px_3px_rgba(0,0,0,0.55)]">
@@ -25,7 +25,7 @@ export default async function Home() {
       <div className="flex justify-center items-center space-x-8">
         <Search />
       </div>
-      {/* <Loader /> */}
+      <Loader />
     </main>
   );
 }

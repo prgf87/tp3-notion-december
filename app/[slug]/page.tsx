@@ -31,10 +31,7 @@ export default async function page({ params }: Props) {
     return (
       <div>
         <div className="flex justify-center items-center">
-          <div>
-            <div className="text-center pt-4 pb-2">
-              <h1>Got to keep looking...</h1>
-            </div>
+          <div className="pt-2 pb-2">
             <Search />
           </div>
         </div>
