@@ -13,24 +13,29 @@ export default function Search() {
       <form
         onInput={(e) => {
           e.preventDefault();
-          searchNotion(query)
-            .then((res) => {
-              const { results } = res;
-              return results;
-            })
-            .then((res) => {
-              setResults(
-                res.sort((a: { object: string }, b: { object: string }) => {
-                  if (a.object === "database" && b.object === "page") {
-                    return -1; // 'database' comes before 'page'
-                  } else if (a.object === "page" && b.object === "database") {
-                    return 1;
-                  } else {
-                    return 0; // order remains unchanged
-                  }
-                }) as any
-              );
-            });
+          try {
+            searchNotion(query)
+              .then((res) => {
+                const { results } = res;
+                console.log("Query Results: ", results);
+                return results;
+              })
+              .then((res) => {
+                setResults(
+                  res.sort((a: { object: string }, b: { object: string }) => {
+                    if (a.object === "database" && b.object === "page") {
+                      return -1; // 'database' comes before 'page'
+                    } else if (a.object === "page" && b.object === "database") {
+                      return 1;
+                    } else {
+                      return 2; // order remains unchanged
+                    }
+                  }) as any
+                );
+              });
+          } catch (e) {
+            console.log("Query Results Failed - Error: ", e);
+          }
         }}
       >
         <input
@@ -43,7 +48,7 @@ export default function Search() {
         />
       </form>
       <div className="relative z-10">
-        <div className="absolute min-w-[550px] max-h-[200px]">
+        <div className="absolute min-w-[280px] max-h-[200px]">
           <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95 overflow-y-scroll max-h-[50vh]">
             {query.length > 0 &&
               results.map((res: any, i: number) => {
@@ -144,8 +149,8 @@ export default function Search() {
                   res.object === "database" &&
                   res.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
                   res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb" &&
-                  res?.title[0].text.content &&
-                  res?.parent.page_id
+                  res?.title[0].text.content
+                  // res?.parent.page_id
                 ) {
                   return (
                     <li
@@ -153,7 +158,7 @@ export default function Search() {
                       key={res.id}
                     >
                       <Link
-                        href={`/${res?.parent.page_id as string}`}
+                        href={`/${res?.id as string}`}
                         onClick={() => {
                           setQuery("");
                         }}

@@ -9,8 +9,8 @@ type Props = {};
 export default async function Header({}: Props) {
   // const block = await search();
   return (
-    <>
-      <div className="grid grid-cols-3 pt-8 pb-8 mx-auto bg-black text-white text-sm drop-shadow-lg">
+    <div className="bg-black/95 text-white text-sm drop-shadow-lg">
+      <div className="grid grid-cols-3 pt-8 pb-8 mx-auto">
         <div className="flex justify-center items-center py-6">
           <Link href={"/"} className="absolute">
             <Image
@@ -58,6 +58,6 @@ export default async function Header({}: Props) {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
