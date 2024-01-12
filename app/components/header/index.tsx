@@ -9,8 +9,8 @@ type Props = {};
 export default async function Header({}: Props) {
   // const block = await search();
   return (
-    <>
-      <div className="grid grid-cols-3 pt-6 pb-6 mx-auto bg-black text-white text-base drop-shadow-lg">
+    <div className="bg-black/95 text-white text-sm drop-shadow-lg">
+      <div className="grid grid-cols-3 pt-8 pb-8 mx-auto">
         <div className="flex justify-center items-center py-6">
           <Link href={"/"} className="absolute">
             <Image
@@ -19,7 +19,7 @@ export default async function Header({}: Props) {
               width={150}
               height={150}
               placeholder="blur"
-              className="h-[60px] max-w-[60px] transition-all duration-300 ease-linear hover:rounded-2xl hover:border-2 hover:border-black/70"
+              className="h-[80px] max-w-[80px] transition-all duration-300 ease-linear hover:rounded-3xl hover:border-1 hover:border-black/70"
             />
           </Link>
         </div>
@@ -36,7 +36,7 @@ export default async function Header({}: Props) {
               width={150}
               height={150}
               placeholder="blur"
-              className="h-6 w-4 object-cover ml-0.5 font-bold"
+              className="h-10 w-6 ml-1 font-bold relative bottom-1"
             />
           </Link>
           <Link
@@ -46,9 +46,9 @@ export default async function Header({}: Props) {
             About Us
           </Link>
 
-          <Link href={"/login"} className="hover:brightness-75">
+          {/* <Link href={"/login"} className="hover:brightness-75">
             User Area
-          </Link>
+          </Link> */}
 
           <Link
             href={"/a35b86baa3f24f01ac5ec3b7d2c4d410"}
@@ -58,6 +58,6 @@ export default async function Header({}: Props) {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

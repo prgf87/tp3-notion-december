@@ -8,11 +8,18 @@ type Props = {};
 export default function Intro({}: Props) {
   return (
     <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
-      <h1 className="text-7xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)]">
-        Welcome to Talking Points for Life
-      </h1>
-      <div className="mx-8 2xl:mx-20 py-8 space-y-4">
-        <p className="text-lg">
+      <div>
+        <span className="relative drop-shadow-[4px_4px_3px_rgba(0,0,0,0.55)]">
+          <h1 className="text-6xl 2xl:text-7xl font-light text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_3px_rgba(0,0,0,0.55)]">
+            Welcome to<br></br>Talking Points for Life
+          </h1>
+        </span>
+        {/* <h1 className="text-6xl 2xl:text-7xl text-center pt-8 pb-4 uppercase drop-shadow-[-4px_4px_4px_rgba(0,0,0,0.55)] relative left-[0px] top-[3px] right-0 bottom-0 font-normal opacity-5 z-[0]">
+          Welcome to<br></br>Talking Points for Life
+        </h1> */}
+      </div>
+      <div className="mx-8 2xl:mx-20 pb-8 space-y-4">
+        <p className="font-semibold text-lg">
           Too many people are left wandering through Reddit threads and Quora
           posts, looking for advice on what to say. Communication is tricky. We
           all bring our own biases, emotions, and histories to the table.
@@ -21,7 +28,7 @@ export default function Intro({}: Props) {
           This site will help you navigate those tricky subjects, allowing you
           to build healthier and happier relationships.
         </p>
-        <p className="text-lg">
+        <p className="font-semibold text-lg">
           Talking Points for Life is a library of ready-to-use messages for
           challenging social situations e.g.,{" "}
           <Link
@@ -31,7 +38,7 @@ export default function Intro({}: Props) {
             How to respond to nosy or inappropriate questions{" "}
           </Link>
         </p>
-        <p className="text-lg">
+        <p className="font-semibold text-lg">
           Not sure how to tell your best friend she&apos;s not your Maid of
           Honor? Check out{" "}
           <Link
@@ -41,7 +48,7 @@ export default function Intro({}: Props) {
             How to tell someone they will not be your Bridesmaid
           </Link>
         </p>
-        <p className="text-lg">
+        <p className="font-semibold text-lg">
           Need to draw a boundary? We&apos;ve got you covered:{" "}
           <Link
             href={"/dd3d38aa898741d59de80cf1fbf3615e"}
@@ -50,7 +57,7 @@ export default function Intro({}: Props) {
             How to set boundaries
           </Link>
         </p>
-        <p className="text-lg">
+        <p className="font-semibold text-lg">
           Want to give sympathy to someone who lost a parent? Here&apos;s a good
           place to start:
           <Link

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { NotionAPI } from "notion-client";
 import { ExtendedRecordMap } from "notion-types";
 import React from "react";
+import Search from "../components/notion/NotionSearch";
 
 const notion = new NotionAPI();
 
@@ -26,8 +27,14 @@ export default async function page({ params }: Props) {
     return <ErrorHandler />;
   try {
     const recordMap: ExtendedRecordMap | null = await notion.getPage(slug);
+
     return (
       <div>
+        <div className="flex justify-center items-center">
+          <div className="pt-2 pb-2">
+            <Search />
+          </div>
+        </div>
         <NotionPage recordMap={recordMap} />
       </div>
     );

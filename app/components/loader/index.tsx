@@ -16,9 +16,9 @@ export default async function Loader() {
   //   console.log("for loop key: ", key, typeof key);
   // }
 
-  const filter = Object.entries(loader).filter((record, i) => {
-    console.log("####Record", Object.entries(record));
-  });
+  // const filter = Object.entries(loader).filter((record, i) => {
+  //   console.log("####Record", Object.entries(record));
+  // });
 
   return (
     <div className="max-w-3xl 2xl:max-w-7xl mx-auto">
