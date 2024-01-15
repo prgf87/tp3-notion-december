@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,13 @@ const Collection = dynamic(() =>
 export default function NotionLoader({ recordMap }: Props) {
   // const filteredRecordMap = recordMap.filter(())
   // console.log(recordMap, "///recordmap");
+
+  const fakeLoader = recordMap;
+
+  console.log(typeof fakeLoader, fakeLoader.collection);
+
+  // useEffect(() => {}, []);
+
   return (
     <div className="max-w-3xl xl:max-w-7xl z-0">
       <div className="flex justify-center items-center">

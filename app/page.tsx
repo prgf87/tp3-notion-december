@@ -2,6 +2,7 @@ import Loader from "./components/loader";
 import Categories from "./components/categories";
 import Intro from "./components/intro";
 import Search from "./components/notion/NotionSearch";
+import NotionScroller from "./components/notion/NotionScroller";
 
 export default async function Home() {
   return (
@@ -25,7 +26,8 @@ export default async function Home() {
       <div className="flex justify-center items-center space-x-8">
         <Search />
       </div>
-      <Loader />
+      {/* <Loader /> */}
+      <NotionScroller />
     </main>
   );
 }
