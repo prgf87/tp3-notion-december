@@ -23,6 +23,7 @@ export async function fetchPages() {
     page_size: pageSize,
   });
 
+  console.log("Response Database: ", response);
   return response;
 }
 
