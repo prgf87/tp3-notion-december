@@ -12,47 +12,33 @@ export default function Search() {
   return (
     <div className="py-4">
       <form
-        onInput={(e) => {
+        onSubmit={(e) => {
           e.preventDefault();
           try {
-            searchNotion(query)
-              .then((res) => {
-                const { results, next_cursor } = res;
-                console.log(
-                  "1. Query response / Looking for cursor: ",
-                  res.next_cursor
-                );
-                if (res.has_more) {
-                  setCursor(next_cursor as string);
-                }
-                return results;
-              })
-              .then((res) => {
-                setResults(
-                  res.sort((a: { object: string }, b: { object: string }) => {
-                    if (a.object === "database" && b.object === "page") {
-                      return -1; // 'database' comes before 'page'
-                    } else if (a.object === "page" && b.object === "database") {
-                      return 1;
-                    } else {
-                      return 2; // order remains unchanged
-                    }
-                  }) as any
-                );
-              })
-              .then(() => {
-                keepSearchingNotion(query, cursor).then((res) => {
-                  console.log("Keep Searching Response", res);
-                  const { results, next_cursor } = res;
-                  console.log(
-                    "1. Query response / Looking for cursor: ",
-                    res.next_cursor
-                  );
-                  if (res.has_more) {
-                    setCursor(next_cursor as string);
-                  }
-                });
-              });
+            searchNotion(query).then((res) => {
+              // const { results, next_cursor } = res;
+
+              // if (res.has_more) {
+              //   setCursor(next_cursor as string);
+              // }
+              // return results;
+              setResults(res as any);
+            });
+            // .then((res) => {
+            // });
+            // .then(() => {
+            //   keepSearchingNotion(query, cursor).then((res) => {
+            //     console.log("Keep Searching Response", res);
+            //     const { results, next_cursor } = res;
+            //     console.log(
+            //       "1. Query response / Looking for cursor: ",
+            //       res.next_cursor
+            //     );
+            //     if (res.has_more) {
+            //       setCursor(next_cursor as string);
+            //     }
+            //   });
+            // });
           } catch (e) {
             console.log("Query Results Failed - Error: ", e);
           }
@@ -66,11 +52,17 @@ export default function Search() {
             setQuery(e.target.value);
           }}
         />
+        <button
+          type="submit"
+          className="px-6 py-1.5 ml-2 text-white font-semibold bg-pink-800"
+        >
+          Search
+        </button>
       </form>
       <div className="relative z-10">
         <div className="absolute min-w-[280px] max-h-[200px]">
           <ul className="bg-gray-700/95 transition-transform duration-300 opacity-95 overflow-y-scroll max-h-[50vh]">
-            {/* {query.length > 0 &&
+            {query.length > 0 &&
               searchResults.map((res: any, i: number) => {
                 // console.log(res);
 
@@ -167,8 +159,6 @@ export default function Search() {
                   );
                 } else if (
                   res.object === "database" &&
-                  res.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
-                  res.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb" &&
                   res?.title[0].text.content
                   // res?.parent.page_id
                 ) {
@@ -211,7 +201,7 @@ export default function Search() {
                     </li>
                   );
                 }
-              })} */}
+              })}
             {searchResults.length > 0 && query.length > 0 && (
               <li className="sticky bottom-0 border-t-2 border-b-2 bg-gray-700 z-10 text-white font-semibold">
                 Results: {searchResults.length}

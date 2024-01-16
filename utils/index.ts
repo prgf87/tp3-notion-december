@@ -60,9 +60,10 @@ export async function searchNotion(query = "") {
   const response = await notion.search({
     query: query,
     filter: {
-      value: "database",
       property: "object",
+      value: "database",
     },
+
     sort: {
       direction: "descending",
       timestamp: "last_edited_time",
@@ -71,7 +72,39 @@ export async function searchNotion(query = "") {
     // page_size: 50,
   });
   // console.log('########Search: ', response);
-  return response;
+  // console.log(title[0].plain_text);
+  // let findQuery = query;
+
+  const { results } = response;
+
+  const filteredResults = results.filter((result) => {
+    console.log("##########result: ", result);
+    if (
+      result.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
+      result.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb"
+    ) {
+      console.log("result: ", result);
+      return result;
+      // let pageTitle = result.properties.name.title[0].plain_text
+      //   ? result.properties.name.title[0].plain_text
+      //   : result.properties.Title.title[0].plain_text
+      //     ? result.properties.Title.title[0].plain_text
+      //     : "";
+      // return {
+      //   results: {
+      //     title: pageTitle,
+      //     link: result.parent.database_id,
+      //   },
+      // };
+    }
+    // console.log(Object.keys(result["title"]));
+    // return {
+    //   pageName: result.title[0].plain_text as string,
+    //   icon: result.icon ? result.icon : result.cover ? result.cover : null,
+    // };
+  });
+  // console.log("##########filter", filteredResults);
+  return filteredResults;
 }
 
 export async function keepSearchingNotion(query: string, cursor: string) {

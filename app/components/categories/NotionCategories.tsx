@@ -3,10 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { NotionRenderer } from "react-notion-x";
 import dynamic from "next/dynamic";
-import "@/app/styles/notion-styles.css";
 
 import { ExtendedRecordMap } from "notion-types";
 import Image from "next/image";
+
+import "@/app/styles/notion-styles.css";
 
 const Collection = dynamic(() =>
   import("react-notion-x/build/third-party/collection").then(
