@@ -54,7 +54,7 @@ export default function Search() {
         />
         <button
           type="submit"
-          className="px-6 py-1.5 ml-2 text-white font-semibold bg-pink-800"
+          className="px-6 py-1.5 ml-2 text-white font-semibold bg-pink-800 rounded-xl border-2 border-zinc-100/70"
         >
           Search
         </button>

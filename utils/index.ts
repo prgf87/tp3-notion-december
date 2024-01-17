@@ -1,7 +1,10 @@
 "use server";
-import { Client } from "@notionhq/client";
+import { Client, LogLevel } from "@notionhq/client";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const notion = new Client({
+  auth: process.env.NOTION_API_KEY,
+  // logLevel: LogLevel.DEBUG,
+});
 const databaseId = process.env.NOTION_DB_ID as string;
 const databaseId2 = process.env.NOTION_DB2_ID as string;
 const pageSize: number = 6;
@@ -50,11 +53,15 @@ export async function fetchMorePages(cursor: string) {
 
 export async function fetchCategories() {
   //* Query made looking for the categories */
-  const response = await notion.databases.query({
-    database_id: databaseId2,
-  });
+  // const databaseQuery = await notion.databases.query({
+  //   database_id: databaseId2,
+  // });
 
-  return response;
+  // const pageId = databaseQuery.request_id;
+  const pageQuery = await notion.pages.retrieve({ page_id: databaseId2 });
+
+  console.log(pageQuery);
+  // return response;
 }
 
 export async function searchNotion(query = "") {
