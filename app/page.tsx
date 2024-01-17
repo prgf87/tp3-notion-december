@@ -26,8 +26,8 @@ export default async function Home() {
       <div className="flex justify-center items-center space-x-8">
         <Search />
       </div>
-      {/* <Loader /> */}
-      <NotionScroller />
+      <Loader />
+      {/* <NotionScroller /> */}
     </main>
   );
 }

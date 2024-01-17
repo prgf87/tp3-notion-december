@@ -10,8 +10,8 @@ export default async function Header({}: Props) {
   // const block = await search();
   return (
     <div className="bg-black/95 text-white text-sm drop-shadow-lg">
-      <div className="grid grid-cols-3 pt-8 pb-8 mx-auto">
-        <div className="flex justify-center items-center py-6">
+      <div className="grid grid-cols-3 py-6 mx-auto">
+        <div className="flex justify-center items-center py-2">
           <Link href={"/"} className="absolute">
             <Image
               src={logo}
@@ -19,7 +19,7 @@ export default async function Header({}: Props) {
               width={150}
               height={150}
               placeholder="blur"
-              className="h-[80px] max-w-[80px] transition-all duration-300 ease-linear hover:rounded-3xl hover:border-1 hover:border-black/70"
+              className="h-[60px] max-w-[60px] transition-all duration-300 ease-linear hover:rounded-3xl hover:border-1 hover:border-black/70"
             />
           </Link>
         </div>
