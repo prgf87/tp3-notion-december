@@ -10,7 +10,7 @@ const notion = new NotionAPI();
 type Props = { params: { slug: string } };
 
 function ErrorHandler() {
-  redirect("/");
+  // redirect("/");
   return (
     <div className="flex justify-center items-center h-80">
       <h1>Whoops..! We couldn&apos;t find that page, please try again.</h1>

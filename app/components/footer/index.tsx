@@ -8,7 +8,7 @@ export default function Footer({}: Props) {
   return (
     <div className="text-center py-5 bg-black text-white text-xl">
       <Link href={"/"}>
-        &copy; Talking Points for Life {date.getFullYear()}
+        &copy; {date.getFullYear()} Talking Points for Life
       </Link>
     </div>
   );
