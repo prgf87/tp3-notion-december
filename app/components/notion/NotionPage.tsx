@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { ExtendedRecordMap } from "notion-types";
 import { NotionRenderer } from "react-notion-x";
 
-import "@/app/styles/notion-renderer-styles.css";
+import "@/app/styles/notion-styles.css";
 
 const Code = dynamic(() =>
   import("react-notion-x/build/third-party/code").then((m) => m.Code)

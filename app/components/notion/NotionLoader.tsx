@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExtendedRecordMap } from "notion-types";
 import { NotionRenderer } from "react-notion-x";
-import "@/app/styles/notion-category-styles.css";
+import "@/app/styles/notion-styles.css";
 
 type Props = { recordMap: ExtendedRecordMap };
 
@@ -21,7 +21,7 @@ export default function NotionLoader({ recordMap }: Props) {
 
   const fakeLoader = recordMap;
 
-  console.log(typeof fakeLoader, fakeLoader.collection);
+  // console.log(typeof fakeLoader, fakeLoader.collection);
 
   // useEffect(() => {}, []);
 

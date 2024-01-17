@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { ExtendedRecordMap } from "notion-types";
 import Image from "next/image";
 
-import "@/app/styles/notion-category-styles.css";
+import "@/app/styles/notion-styles.css";
 
 const Collection = dynamic(() =>
   import("react-notion-x/build/third-party/collection").then(

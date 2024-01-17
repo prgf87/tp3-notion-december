@@ -19,16 +19,16 @@ export default function Intro({}: Props) {
         </h1> */}
       </div>
       <div className="mx-8 2xl:mx-20 pb-8 space-y-4">
-        <p className="font-semibold text-lg">
+        <p className="font-semibold text-xl">
           Too many people are left wandering through Reddit threads and Quora
           posts, looking for advice on what to say. Communication is tricky. We
           all bring our own biases, emotions, and histories to the table.
         </p>
-        <p className="text-lg font-bold">
+        <p className="text-xl font-bold">
           This site will help you navigate those tricky subjects, allowing you
           to build healthier and happier relationships.
         </p>
-        <p className="font-semibold text-lg">
+        <p className="font-semibold text-xl">
           Talking Points for Life is a library of ready-to-use messages for
           challenging social situations e.g.,{" "}
           <Link
@@ -38,7 +38,7 @@ export default function Intro({}: Props) {
             How to respond to nosy or inappropriate questions{" "}
           </Link>
         </p>
-        <p className="font-semibold text-lg">
+        <p className="font-semibold text-xl">
           Not sure how to tell your best friend she&apos;s not your Maid of
           Honor? Check out{" "}
           <Link
@@ -48,7 +48,7 @@ export default function Intro({}: Props) {
             How to tell someone they will not be your Bridesmaid
           </Link>
         </p>
-        <p className="font-semibold text-lg">
+        <p className="font-semibold text-xl">
           Need to draw a boundary? We&apos;ve got you covered:{" "}
           <Link
             href={"/dd3d38aa898741d59de80cf1fbf3615e"}
@@ -57,7 +57,7 @@ export default function Intro({}: Props) {
             How to set boundaries
           </Link>
         </p>
-        <p className="font-semibold text-lg">
+        <p className="font-semibold text-xl">
           Want to give sympathy to someone who lost a parent? Here&apos;s a good
           place to start:
           <Link
@@ -68,7 +68,7 @@ export default function Intro({}: Props) {
         </p>
         <div className="bg-pink-700/50 px-8 py-4 flex space-x-4 text-white font-bold">
           <Image src={thumbsup} alt="Thumbs Up icon" className="h-8 w-8" />
-          <p>
+          <p className="font-semibold text-xl">
             You&apos;re welcome to use these talking points as written or adapt
             them to your style and voice — whatever works best for you.
           </p>

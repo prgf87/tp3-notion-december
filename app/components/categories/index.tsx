@@ -1,6 +1,6 @@
 import React from "react";
 import { NotionAPI } from "notion-client";
-import NotionCategories from "./NotionCategories";
+import NotionCategories from "../notion/NotionCategories";
 
 const notion = new NotionAPI();
 

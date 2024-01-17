@@ -23,7 +23,7 @@ export async function fetchPages() {
     page_size: pageSize,
   });
 
-  console.log("Response Database: ", response);
+  // console.log("Response Database: ", response);
   return response;
 }
 
@@ -79,12 +79,12 @@ export async function searchNotion(query = "") {
   const { results } = response;
 
   const filteredResults = results.filter((result) => {
-    console.log("##########result: ", result);
+    // console.log("##########result: ", result);
     if (
       result.id !== "e600a555-2399-45e3-b856-b3c27bc29d16" &&
       result.id !== "201222b4-5e6b-43bf-95e0-95f99c9c7beb"
     ) {
-      console.log("result: ", result);
+      // console.log("result: ", result);
       return result;
       // let pageTitle = result.properties.name.title[0].plain_text
       //   ? result.properties.name.title[0].plain_text
